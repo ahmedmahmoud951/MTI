@@ -1,0 +1,186 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildingMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7dd3fc;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="glassReflection" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#93c5fd;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.2" />
+    </linearGradient>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e5e7eb;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d1d5db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9ca3af;stop-opacity:1" />
+    </linearGradient>
+    <filter id="buildingShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="20" stdDeviation="15" flood-opacity="0.5"/>
+    </filter>
+    <filter id="windowGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="reflection">
+      <feGaussianBlur stdDeviation="1"/>
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="1400" height="900" fill="url(#skyGrad)"/>
+
+  <!-- Atmospheric Elements -->
+  <circle cx="200" cy="150" r="300" fill="#3b82f6" opacity="0.08"/>
+  <circle cx="1200" cy="200" r="350" fill="#1d4ed8" opacity="0.06"/>
+  <circle cx="700" cy="800" r="400" fill="#3b82f6" opacity="0.04"/>
+
+  <!-- Main Building Structure -->
+  <g filter="url(#buildingShadow)">
+    <!-- Base Foundation -->
+    <rect x="300" y="500" width="800" height="350" fill="url(#buildingMain)" rx="30" ry="30" stroke="#0f7ae5" stroke-width="2"/>
+
+    <!-- Left Wing -->
+    <rect x="300" y="450" width="180" height="400" fill="#0099ff" opacity="0.9" rx="15" ry="15" stroke="#0077cc" stroke-width="2"/>
+
+    <!-- Right Wing -->
+    <rect x="920" y="450" width="180" height="400" fill="#0099ff" opacity="0.9" rx="15" ry="15" stroke="#0077cc" stroke-width="2"/>
+
+    <!-- Central Tower (Main Structure) -->
+    <rect x="500" y="200" width="400" height="750" fill="url(#buildingMain)" stroke="#0f7ae5" stroke-width="2" rx="20"/>
+
+    <!-- Tower Top Section -->
+    <polygon points="500,200 900,200 920,80 480,80" fill="url(#glassReflection)" stroke="#93c5fd" stroke-width="2" opacity="0.95"/>
+
+    <!-- Rooftop Details -->
+    <rect x="550" y="60" width="300" height="30" fill="url(#metalGrad)" rx="5"/>
+    <circle cx="700" cy="55" r="12" fill="#fbbf24" opacity="0.9"/>
+
+    <!-- Antenna -->
+    <line x1="700" y1="50" x2="700" y2="-20" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" opacity="0.95"/>
+    <circle cx="700" cy="-20" r="8" fill="#fbbf24" opacity="1"/>
+    <circle cx="700" cy="-20" r="12" fill="#fbbf24" opacity="0.3"/>
+  </g>
+
+  <!-- Windows Grid - Central Building (6x12) -->
+  <g stroke="#1e40af" stroke-width="1" opacity="0.8">
+    <!-- Vertical Grid Lines -->
+    <line x1="600" y1="250" x2="600" y2="750"/>
+    <line x1="700" y1="250" x2="700" y2="750"/>
+    <line x1="800" y1="250" x2="800" y2="750"/>
+
+    <!-- Horizontal Grid Lines -->
+    <line x1="500" y1="320" x2="900" y2="320"/>
+    <line x1="500" y1="390" x2="900" y2="390"/>
+    <line x1="500" y1="460" x2="900" y2="460"/>
+    <line x1="500" y1="530" x2="900" y2="530"/>
+    <line x1="500" y1="600" x2="900" y2="600"/>
+    <line x1="500" y1="670" x2="900" y2="670"/>
+  </g>
+
+  <!-- Illuminated Windows (Office Lights) - Central Building -->
+  <g fill="#fef3c7" opacity="0.85" filter="url(#windowGlow)">
+    <!-- Floor 1 -->
+    <rect x="530" y="280" width="35" height="35" rx="4"/>
+    <rect x="620" y="280" width="35" height="35" rx="4"/>
+    <rect x="710" y="280" width="35" height="35" rx="4"/>
+    <rect x="800" y="280" width="35" height="35" rx="4"/>
+
+    <!-- Floor 2 -->
+    <rect x="560" y="350" width="35" height="35" rx="4"/>
+    <rect x="650" y="350" width="35" height="35" rx="4"/>
+    <rect x="780" y="350" width="35" height="35" rx="4"/>
+    <rect x="830" y="350" width="35" height="35" rx="4"/>
+
+    <!-- Floor 3 -->
+    <rect x="530" y="420" width="35" height="35" rx="4"/>
+    <rect x="710" y="420" width="35" height="35" rx="4"/>
+    <rect x="800" y="420" width="35" height="35" rx="4"/>
+
+    <!-- Floor 4 -->
+    <rect x="580" y="490" width="35" height="35" rx="4"/>
+    <rect x="670" y="490" width="35" height="35" rx="4"/>
+    <rect x="750" y="490" width="35" height="35" rx="4"/>
+    <rect x="830" y="490" width="35" height="35" rx="4"/>
+
+    <!-- Floor 5 -->
+    <rect x="620" y="560" width="35" height="35" rx="4"/>
+    <rect x="710" y="560" width="35" height="35" rx="4"/>
+    <rect x="800" y="560" width="35" height="35" rx="4"/>
+
+    <!-- Floor 6 -->
+    <rect x="540" y="630" width="35" height="35" rx="4"/>
+    <rect x="700" y="630" width="35" height="35" rx="4"/>
+    <rect x="820" y="630" width="35" height="35" rx="4"/>
+  </g>
+
+  <!-- Left Wing Windows -->
+  <g stroke="#1e40af" stroke-width="1" opacity="0.6">
+    <line x1="350" y1="480" x2="350" y2="800"/>
+    <line x1="400" y1="480" x2="400" y2="800"/>
+    <line x1="330" y1="530" x2="470" y2="530"/>
+    <line x1="330" y1="600" x2="470" y2="600"/>
+    <line x1="330" y1="670" x2="470" y2="670"/>
+  </g>
+
+  <!-- Left Wing Lit Windows -->
+  <g fill="#fef3c7" opacity="0.75" filter="url(#windowGlow)">
+    <rect x="360" y="500" width="30" height="30" rx="3"/>
+    <rect x="410" y="500" width="30" height="30" rx="3"/>
+    <rect x="360" y="580" width="30" height="30" rx="3"/>
+    <rect x="410" y="620" width="30" height="30" rx="3"/>
+  </g>
+
+  <!-- Right Wing Windows -->
+  <g stroke="#1e40af" stroke-width="1" opacity="0.6">
+    <line x1="950" y1="480" x2="950" y2="800"/>
+    <line x1="1000" y1="480" x2="1000" y2="800"/>
+    <line x1="930" y1="530" x2="1070" y2="530"/>
+    <line x1="930" y1="600" x2="1070" y2="600"/>
+    <line x1="930" y1="670" x2="1070" y2="670"/>
+  </g>
+
+  <!-- Right Wing Lit Windows -->
+  <g fill="#fef3c7" opacity="0.75" filter="url(#windowGlow)">
+    <rect x="960" y="500" width="30" height="30" rx="3"/>
+    <rect x="1010" y="500" width="30" height="30" rx="3"/>
+    <rect x="960" y="580" width="30" height="30" rx="3"/>
+    <rect x="1010" y="620" width="30" height="30" rx="3"/>
+  </g>
+
+  <!-- Modern Glass Panels (Reflection Effect) -->
+  <g opacity="0.15" fill="url(#glassReflection)">
+    <rect x="510" y="260" width="380" height="200" rx="10"/>
+    <rect x="510" y="400" width="380" height="200" rx="10"/>
+  </g>
+
+  <!-- Entrance Area -->
+  <g>
+    <rect x="600" y="750" width="200" height="100" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" rx="5"/>
+    <line x1="700" y1="750" x2="700" y2="850" stroke="#93c5fd" stroke-width="2" opacity="0.6"/>
+    <rect x="620" y="770" width="30" height="50" fill="#60a5fa" opacity="0.8"/>
+    <rect x="750" y="770" width="30" height="50" fill="#60a5fa" opacity="0.8"/>
+  </g>
+
+  <!-- Lighting Effects (Glowing Aura) -->
+  <circle cx="700" cy="400" r="500" fill="#3b82f6" opacity="0.02"/>
+  <circle cx="700" cy="400" r="600" fill="#1d4ed8" opacity="0.01"/>
+
+  <!-- Surrounding Ground -->
+  <ellipse cx="700" cy="870" rx="500" ry="80" fill="#000" opacity="0.15"/>
+
+  <!-- Accent Lighting on Edges -->
+  <line x1="500" y1="200" x2="480" y2="180" stroke="#93c5fd" stroke-width="2" opacity="0.6"/>
+  <line x1="900" y1="200" x2="920" y2="180" stroke="#93c5fd" stroke-width="2" opacity="0.6"/>
+
+  <!-- Decorative Corner Accents -->
+  <circle cx="510" cy="750" r="8" fill="#fbbf24" opacity="0.8"/>
+  <circle cx="890" cy="750" r="8" fill="#fbbf24" opacity="0.8"/>
+</svg>

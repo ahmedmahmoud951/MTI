@@ -1,0 +1,499 @@
+{
+  "systemPrompt": "أنت AI Assistant ذكي لموقع شركة MTI Engineering. مهمتك الرد على جميع استفسارات العملاء التقنية المتعلقة بالكاميرات، أنظمة Milestone، Genetec، Honeywell Access Control، وإدارة الأجهزة، بالإضافة إلى تقديم حلول المشاكل التقنية. القواعد الأساسية: 1. استخدم فقط Knowledge Base المحلية. 2. احفظ آخر 20 رسالة في الذاكرة. 3. كل الردود يجب أن تكون بالعربي والإنجليزي. 4. إذا لم تجد إجابة، أجب: سأقوم بالتحقق من المشكلة وأرد عليك قريبًا. / I will check the issue and get back to you soon. 5. ركّز على حلول عملية وسريعة. 6. كل العمليات محلية بدون API خارجي.",
+  "company": {
+    "name": "MTI Engineering",
+    "description": "MTI Engineering specializes in intelligent video surveillance and IoT infrastructure solutions across the MENA region",
+    "tagline": "Advanced surveillance, smart security, connected infrastructure",
+    "systemUptime": "99.7%",
+    "operationalRegions": ["Egypt", "Saudi Arabia", "UAE", "Kuwait", "Other MENA countries"],
+    "coreCapabilities": [
+      "Intelligent video surveillance",
+      "AI-powered video analytics",
+      "IoT device management",
+      "Real-time monitoring systems",
+      "Cloud-connected infrastructure",
+      "Smart sensors deployment"
+    ]
+  },
+  "infrastructure": {
+    "camerasDeployed": 50947,
+    "connectedDevices": 52346,
+    "smartSensors": 2450,
+    "deploymentPoints": 400,
+    "apiUptime": "99.99%",
+    "avgResponseTime": "42ms",
+    "activeProjects": 8
+  },
+  "services": [
+    {
+      "id": "surveillance",
+      "name": "Intelligent Video Surveillance",
+      "description": "AI-powered CCTV systems with real-time analytics and threat detection",
+      "features": [
+        "High-definition video capture (up to 4K)",
+        "AI-powered object detection and tracking",
+        "License plate recognition (LPR)",
+        "Heat mapping and crowd analysis",
+        "24/7 monitoring and alerts"
+      ],
+      "technologies": ["Computer Vision", "Machine Learning", "Cloud Integration", "Real-time Processing"]
+    },
+    {
+      "id": "iot-solutions",
+      "name": "IoT Infrastructure Solutions",
+      "description": "Comprehensive IoT device management and connectivity",
+      "features": [
+        "Device provisioning and management",
+        "Real-time data collection",
+        "Multi-sensor integration",
+        "Automated alerting systems",
+        "Cloud synchronization"
+      ],
+      "technologies": ["IoT Platforms", "Sensor Networks", "Edge Computing", "Cloud Services"]
+    },
+    {
+      "id": "smart-sensors",
+      "name": "Smart Sensor Deployment",
+      "description": "Advanced multi-sensor systems for comprehensive monitoring",
+      "types": [
+        "Multi-sensor units for complex environments",
+        "Ground-based environmental sensors",
+        "Marine/underwater monitoring sensors",
+        "Air quality and pollution monitors",
+        "Structural health monitoring sensors"
+      ],
+      "coverage": "2,450+ sensors across all operational sites"
+    },
+    {
+      "id": "analytics",
+      "name": "Video Analytics & Reporting",
+      "description": "Deep insights into surveillance data with actionable reports",
+      "capabilities": [
+        "Real-time event detection",
+        "Pattern recognition and anomaly detection",
+        "Custom report generation",
+        "Performance metrics and KPIs",
+        "Predictive analytics"
+      ]
+    },
+    {
+      "id": "support",
+      "name": "24/7 Technical Support",
+      "description": "Round-the-clock professional support across all time zones",
+      "availability": "24/7",
+      "avgResponseTime": "Under 5 minutes for critical issues",
+      "channels": ["Remote diagnostics", "On-site assistance", "Phone support", "Email support"],
+      "services": ["Preventive maintenance", "Emergency response", "System optimization", "Staff training"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "KAYAN",
+      "location": "Saudi Arabia",
+      "status": "Active",
+      "camerasDeployed": 40000,
+      "description": "Large-scale surveillance infrastructure for major facility",
+      "completionDate": "2023",
+      "highlights": ["Highest camera deployment by MTI", "AI-powered threat detection", "Real-time command center"]
+    },
+    {
+      "name": "Al Hamra",
+      "location": "Saudi Arabia",
+      "status": "Active",
+      "camerasDeployed": 3500,
+      "description": "Premium integrated surveillance system",
+      "highlights": ["LPR integration", "Multi-facility monitoring", "Cloud-based analytics"]
+    },
+    {
+      "name": "Cairo Airport",
+      "location": "Egypt",
+      "status": "Active",
+      "camerasDeployed": 700,
+      "description": "International airport security infrastructure",
+      "highlights": ["Terminal surveillance", "Perimeter monitoring", "Real-time alerts"]
+    },
+    {
+      "name": "Burj Al Arab",
+      "location": "UAE",
+      "status": "Active",
+      "camerasDeployed": 500,
+      "description": "Premium hospitality surveillance system",
+      "highlights": ["High-end integrated system", "Guest privacy protocols", "Luxury facility monitoring"]
+    },
+    {
+      "name": "WATANYA",
+      "location": "Kuwait",
+      "status": "Active",
+      "camerasDeployed": 2500,
+      "description": "National infrastructure monitoring project",
+      "highlights": ["Large-scale deployment", "Government-grade security", "Real-time command center"]
+    },
+    {
+      "name": "Suez Tunnels",
+      "location": "Egypt",
+      "status": "Active",
+      "camerasDeployed": 1200,
+      "description": "Critical infrastructure tunnel monitoring",
+      "highlights": ["Underwater sensors", "Traffic monitoring", "Emergency response systems"]
+    },
+    {
+      "name": "Olympic City",
+      "location": "Egypt",
+      "status": "Active",
+      "camerasDeployed": 6000,
+      "description": "Large-scale urban development surveillance",
+      "highlights": ["Multi-zone coverage", "Sports facilities monitoring", "Event management systems"]
+    },
+    {
+      "name": "Suez Canal",
+      "location": "Egypt",
+      "status": "Active",
+      "camerasDeployed": 4500,
+      "description": "Maritime infrastructure and vessel monitoring",
+      "highlights": ["Marine deployment", "Vessel tracking", "Environmental monitoring"]
+    }
+  ],
+  "cameras": {
+    "types": [
+      {
+        "id": "ptz",
+        "name": "PTZ (Pan-Tilt-Zoom) Cameras",
+        "description": "Motorized cameras with remote control and zoom capabilities",
+        "features": ["360° rotation", "30x optical zoom", "Night vision", "IP67 rated"]
+      },
+      {
+        "id": "lpr",
+        "name": "LPR Cameras (License Plate Recognition)",
+        "description": "Specialized cameras for automatic license plate capture and recognition",
+        "features": ["License plate capture", "Automatic recognition", "Speed detection", "Vehicle classification"]
+      },
+      {
+        "id": "multisensor",
+        "name": "Multi-Sensor Units",
+        "description": "Integrated camera systems with multiple sensors for comprehensive coverage",
+        "features": ["Thermal imaging", "Visible light capture", "Dual streaming", "360° coverage"]
+      },
+      {
+        "id": "thermal",
+        "name": "Thermal Cameras",
+        "description": "Infrared imaging for night surveillance and temperature monitoring",
+        "features": ["24/7 visibility", "Temperature measurement", "Fire detection", "Weather resistant"]
+      },
+      {
+        "id": "hd",
+        "name": "HD/4K Fixed Cameras",
+        "description": "High-definition fixed cameras for stationary monitoring",
+        "features": ["4K resolution", "Wide dynamic range", "Low-light performance", "Weather resistant"]
+      }
+    ],
+    "specs": {
+      "resolution": "Up to 4K UHD",
+      "fps": "60 FPS standard",
+      "nightVision": "Infrared and thermal options",
+      "connectivity": "IP-based, Cloud-connected",
+      "weatherRating": "IP67 standard",
+      "nightPerformance": "Advanced thermal and IR imaging"
+    }
+  },
+  "faq": [
+    {
+      "question": "كيف أضيف كاميرا جديدة؟ / How do I add a new camera?",
+      "answer": "افتح نظام إدارة الكاميرات واختر 'Add Camera'. أدخل اسم الكاميرا والموقع ونوع الكاميرا والعنوان IP ثم احفظ. / Open the camera management system and select 'Add Camera'. Enter camera name, location, type, IP address, and save."
+    },
+    {
+      "question": "الفيديو لا يظهر من الكاميرا / Video is not showing from camera",
+      "answer": "تحقق من: 1) توصيل الكاميرا بالشبكة، 2) تشغيل السيرفر، 3) صحة العنوان IP، 4) جدار الحماية. / Check: 1) Camera network connection, 2) Server is running, 3) Correct IP address, 4) Firewall settings."
+    },
+    {
+      "question": "أفضل سيرفر لتشغيل Milestone XProtect / Best server for Milestone XProtect",
+      "answer": "معالج Intel Xeon E5-2600 أو أحدث، RAM 32GB-64GB، SSD 2TB للتخزين، نظام تبريد قوي. / Intel Xeon E5-2600 or newer, 32GB-64GB RAM, 2TB SSD storage, strong cooling system."
+    },
+    {
+      "question": "كم كاميرا يمكن توصيلها على سيرفر واحد؟ / How many cameras per server?",
+      "answer": "50-100 كاميرا Full HD، أو 20-50 كاميرا 4K على سيرفر قياسي. يعتمد على المعالج والذاكرة. / 50-100 Full HD or 20-50 4K cameras per standard server. Depends on CPU and RAM."
+    },
+    {
+      "question": "مساحة التخزين المطلوبة لكل كاميرا / Storage required per camera",
+      "answer": "Full HD: 20-30GB يومياً، 4K: 40-60GB يومياً، يعتمد على معدل الإطارات والضغط. / Full HD: 20-30GB daily, 4K: 40-60GB daily. Depends on frame rate and compression."
+    },
+    {
+      "question": "كيفية إعداد Milestone Recording Server / How to setup Milestone Recording Server",
+      "answer": "1) ثبّت Milestone XProtect، 2) أنشئ Recording Server، 3) أضف الكاميرات، 4) اضبط جدول التسجيل والتنبيهات. / 1) Install Milestone XProtect, 2) Create Recording Server, 3) Add cameras, 4) Configure recording schedule and alerts."
+    },
+    {
+      "question": "كيفية إعداد Genetec Security Center / How to setup Genetec Security Center",
+      "answer": "1) ثبّت Genetec Server، 2) أنشئ المستخدمين والأدوار، 3) أضف الكاميرات، 4) اضبط قواعد الأمان والتنبيهات. / 1) Install Genetec Server, 2) Create users and roles, 3) Add cameras, 4) Configure security rules and alerts."
+    },
+    {
+      "question": "كيفية إعداد Honeywell Pro-Watch / How to setup Honeywell Pro-Watch",
+      "answer": "1) ثبّت Pro-Watch، 2) أضف القارئات والأبواب، 3) أنشئ المستخدمين والتراخيص، 4) اضبط سياسات الدخول. / 1) Install Pro-Watch, 2) Add readers and doors, 3) Create users and licenses, 4) Configure access policies."
+    },
+    {
+      "question": "أفضل أنواع الكاميرات للمشاريع الكبيرة / Best camera types for large projects",
+      "answer": "IP كاميرات 4K مع PoE، تدعم ONVIF وH.264، قدرات ليلية متقدمة، وتوافق مع أنظمة VMS الرئيسية. / 4K IP cameras with PoE, ONVIF compatible, H.264 support, advanced night vision, compatible with major VMS."
+    },
+    {
+      "question": "كيفية إضافة كاميرا PTZ / How to add PTZ camera",
+      "answer": "حدد نوع PTZ، أدخل العنوان IP، اضبط سرعة الحركة والمسارات المبرمجة والأحداث الموجهة. / Select PTZ type, enter IP address, configure movement speed, preset routes and event triggers."
+    },
+    {
+      "question": "ما هي أفضل إعدادات الشبكة للكاميرات / Best network settings for cameras",
+      "answer": "استخدم VLAN منفصلة للكاميرات، IP ثابت، QoS لضمان جودة الخدمة، DNS موثوق. / Use separate VLAN for cameras, static IP, QoS for video quality, reliable DNS."
+    },
+    {
+      "question": "مشكلة انقطاع الفيديو المتكرر / Intermittent video loss issue",
+      "answer": "تحقق من: 1) جودة الكابلات، 2) سرعة الشبكة، 3) تحديثات البرامج الثابتة، 4) أحمال السيرفر. / Check: 1) Cable quality, 2) Network bandwidth, 3) Firmware updates, 4) Server load."
+    },
+    {
+      "question": "أفضل نوع HDD لتخزين الفيديو / Best HDD type for video storage",
+      "answer": "WD Purple أو Seagate SkyHawk (Surveillance-grade)، سعة 4-8TB، سرعة 5400 RPM. / WD Purple or Seagate SkyHawk (Surveillance-grade), 4-8TB capacity, 5400 RPM speed."
+    },
+    {
+      "question": "كمية RAM الموصى بها للسيرفر / Recommended RAM for server",
+      "answer": "32GB للمشاريع الصغيرة-المتوسطة، 64GB للمشاريع الكبيرة، 128GB للتطبيقات الثقيلة جداً. / 32GB for small-medium projects, 64GB for large projects, 128GB for very heavy applications."
+    },
+    {
+      "question": "كيفية توسيع مساحة التخزين / How to expand storage",
+      "answer": "استخدم NAS أو SAN مع RAID 5/6، تأكد من نسخ احتياطية منتظمة وحماية من الفشل. / Use NAS or SAN with RAID 5/6, ensure regular backups and failure protection."
+    },
+    {
+      "question": "أفضل طريقة لمراقبة أداء السيرفر / Best way to monitor server performance",
+      "answer": "استخدم أدوات مراقبة مثل Grafana أو Prometheus، راقب استخدام CPU والذاكرة والشبكة. / Use monitoring tools like Grafana or Prometheus, watch CPU, RAM, and network usage."
+    },
+    {
+      "question": "كيفية إنشاء مستخدم جديد في Milestone / How to create user in Milestone",
+      "answer": "اذهب إلى Administration > Users، أضف مستخدم جديد، عيّن الأدوار والصلاحيات المناسبة. / Go to Administration > Users, add new user, assign appropriate roles and permissions."
+    },
+    {
+      "question": "كيفية إنشاء مستخدم جديد في Genetec / How to create user in Genetec",
+      "answer": "افتح Security Center > Configuration، أضف مستخدم جديد في User Management، عيّن الأدوار. / Open Security Center > Configuration, add user in User Management, assign roles."
+    },
+    {
+      "question": "كيفية إضافة قارئ جديد في Honeywell / How to add reader in Honeywell",
+      "answer": "في Pro-Watch، اذهب إلى Hardware Configuration، اختر 'Add Reader'، أدخل التفاصيل والموقع. / In Pro-Watch, go to Hardware Configuration, select 'Add Reader', enter details and location."
+    },
+    {
+      "question": "مشكلة التأخر في الفيديو الحي / Video streaming delay issue",
+      "answer": "قلل دقة الفيديو، تحقق من سرعة الشبكة، أغلق البرامج الأخرى، حدّث برامج السيرفر. / Reduce video resolution, check network speed, close other programs, update server software."
+    },
+    {
+      "question": "كيفية تفعيل التشفير بين الكاميرا والسيرفر / How to enable encryption",
+      "answer": "استخدم SSL/TLS في إعدادات الكاميرا والسيرفر، تأكد من شهادات الأمان الصحيحة. / Use SSL/TLS in camera and server settings, verify security certificates."
+    },
+    {
+      "question": "أفضل جدول للنسخ الاحتياطية / Best backup schedule",
+      "answer": "نسخة احتياطية يومية للبيانات الحساسة، نسخة أسبوعية للنظام كاملاً، نسخة شهرية بعيدة. / Daily backups for critical data, weekly system backup, monthly off-site backup."
+    },
+    {
+      "question": "كيفية حل مشكلة عدم توصيل الكاميرا بالشبكة / Camera won't connect to network",
+      "answer": "تحقق من: 1) كابل الشبكة، 2) إعدادات الـ IP، 3) جدار الحماية، 4) إعادة تشغيل الكاميرا. / Check: 1) Network cable, 2) IP settings, 3) Firewall, 4) Restart camera."
+    },
+    {
+      "question": "كيفية نسخ إعدادات كاميرا إلى أخرى / How to copy camera settings",
+      "answer": "صدّر الإعدادات من الكاميرا الأولى، أدخل الإعدادات في الكاميرا الثانية، جرّب الاتصال. / Export settings from first camera, import to second camera, test connection."
+    },
+    {
+      "question": "مشكلة الضوضاء في الفيديو / Video noise problem",
+      "answer": "قلل ISO في الكاميرا، تحقق من الإضاءة، أضف مصادر ضوء إضافية، جرّب كاميرا أفضل. / Reduce ISO in camera, check lighting, add light sources, try better camera."
+    },
+    {
+      "question": "كيفية تحديث برامج الكاميرات / How to update camera firmware",
+      "answer": "حمّل الإصدار الجديد من موقع الشركة المصنعة، انسخه على بطاقة SD، ثبّته من إعدادات الكاميرا. / Download new version from manufacturer, copy to SD card, install from camera settings."
+    },
+    {
+      "question": "أفضل إضاءة للكاميرات الليلية / Best lighting for night cameras",
+      "answer": "استخدم LED بأشعة تحت الحمراء غير مرئية، أو إضاءة بيضاء ساحرة (warm white)، أو حرارية. / Use invisible IR LEDs, warm white lighting, or thermal cameras for night."
+    },
+    {
+      "question": "كيفية تقليل استهلاك النطاق الترددي / How to reduce bandwidth",
+      "answer": "قلل دقة الفيديو، استخدم H.265 بدلاً من H.264، فعّل التسجيل عند الحاجة فقط. / Reduce resolution, use H.265 instead of H.264, enable motion-based recording."
+    },
+    {
+      "question": "مشكلة التأخر في الأحداث / Event delay issue",
+      "answer": "تحقق من سرعة معالج السيرفر، قلل عدد القواعد، أعد تشغيل خدمات الحدث. / Check server CPU speed, reduce number of rules, restart event services."
+    },
+    {
+      "question": "كيفية إعداد التنبيهات الفورية / How to setup instant alerts",
+      "answer": "اضبط قواعد الكشف، حدد قنوات الإخطار (بريد، SMS، push)، اختبر التنبيه. / Configure detection rules, set notification channels (email, SMS, push), test alert."
+    },
+    {
+      "question": "كيفية إنشاء تقرير نشاط / How to create activity report",
+      "answer": "اختر نطاق التاريخ والكاميرات، حدد نوع الحدث، صدّر التقرير كـ PDF أو Excel. / Select date range and cameras, specify event type, export as PDF or Excel."
+    },
+    {
+      "question": "مشكلة قطع الاتصال بقاعدة البيانات / Database connection drop",
+      "answer": "تحقق من: 1) خادم قاعدة البيانات، 2) كابل الشبكة، 3) جدار الحماية، 4) بيانات الاتصال. / Check: 1) Database server, 2) Network cable, 3) Firewall, 4) Connection credentials."
+    },
+    {
+      "question": "كيفية عمل نسخة احتياطية للإعدادات / How to backup system settings",
+      "answer": "من لوحة التحكم، اختر Backup، حدد الملفات والإعدادات، احفظها في مكان آمن. / From dashboard, select Backup, choose files and settings, save to safe location."
+    },
+    {
+      "question": "أفضل ممارسات الأمان للنظام / Best security practices",
+      "answer": "غيّر كلمات المرور الافتراضية، فعّل المصادقة متعددة العوامل، استخدم VPN، حدّث البرامج بانتظام. / Change default passwords, enable MFA, use VPN, update software regularly."
+    },
+    {
+      "question": "كيفية مراقبة الكاميرات عن بعد / How to monitor cameras remotely",
+      "answer": "استخدم تطبيق الجوال أو واجهة الويب، أدخل بيانات الدخول، اختر الكاميرات للمشاهدة. / Use mobile app or web interface, enter credentials, select cameras to view."
+    },
+    {
+      "question": "مشكلة الكاميرا مفصولة عن الشبكة / Camera disconnected from network",
+      "answer": "افحص كابل الشبكة، أعد تشغيل الكاميرا، فحص إعدادات IP، تحقق من switch الشبكة. / Check network cable, restart camera, verify IP settings, check network switch."
+    },
+    {
+      "question": "كيفية تعيين كلمة مرور قوية / How to set strong password",
+      "answer": "استخدم 12+ أحرف، امزج الأحرف الكبيرة والصغيرة والأرقام والرموز، غيّره كل 3 أشهر. / Use 12+ characters, mix uppercase, lowercase, numbers, symbols, change every 3 months."
+    },
+    {
+      "question": "أفضل حجم للـ Frame Rate / Best frame rate",
+      "answer": "30 FPS للمراقبة العامة، 60 FPS للحركة السريعة، 15 FPS لتوفير النطاق الترددي. / 30 FPS for general monitoring, 60 FPS for fast motion, 15 FPS for bandwidth saving."
+    },
+    {
+      "question": "كيفية حل مشكلة كاميرا متأخرة / Fix lagging camera",
+      "answer": "قلل الدقة، تحقق من اتصال الشبكة، أعد تشغيل الكاميرا، حدّث الفيرموير. / Reduce resolution, check network connection, restart camera, update firmware."
+    },
+    {
+      "question": "أفضل استراتيجية لحفظ الفيديو / Best video retention strategy",
+      "answer": "عالي الأولوية: 30 يوماً، عادي: 14 يوماً، محفوظات: 90 يوماً في NAS. / High priority: 30 days, Normal: 14 days, Archive: 90 days on NAS."
+    },
+    {
+      "question": "كيفية حل مشكلة عدم ظهور الصوت / Audio not playing issue",
+      "answer": "تحقق من: 1) ميكروفون الكاميرا، 2) إعدادات الصوت، 3) سماعات الرأس، 4) مكبرات السيرفر. / Check: 1) Camera mic, 2) Audio settings, 3) Headphones, 4) Server speakers."
+    },
+    {
+      "question": "كيفية عمل حزم الفيديو / Video compression types",
+      "answer": "H.264: جيد للتوافق، H.265: أقل نطاق (50% أقل)، MJPEG: موثوقية عالية. / H.264: Good compatibility, H.265: 50% less bandwidth, MJPEG: High reliability."
+    },
+    {
+      "question": "مشكلة عدم حفظ التسجيلات / Recordings not saving",
+      "answer": "تحقق من: 1) مساحة التخزين، 2) صلاحيات المجلد، 3) إعدادات التسجيل، 4) قرص صلب معطّل. / Check: 1) Storage space, 2) Folder permissions, 3) Recording settings, 4) Disk failure."
+    },
+    {
+      "question": "كيفية نقل النظام إلى سيرفر جديد / How to migrate to new server",
+      "answer": "عمل نسخة احتياطية كاملة، ثبّت النظام على السيرفر الجديد، استعد البيانات، اختبر. / Full backup, install on new server, restore data, test everything."
+    },
+    {
+      "question": "أفضل موقع لوضع السيرفر / Best location for server",
+      "answer": "مكان بارد مع تهوية جيدة، بعيد عن الرطوبة، متاح الوصول الفوري، محمي من التدخل. / Cool location with good ventilation, away from moisture, accessible, protected."
+    },
+    {
+      "question": "كيفية اختبار سرعة الشبكة / How to test network speed",
+      "answer": "استخدم أدوات مثل iperf أو speedtest، اختبر بين الكاميرا والسيرفر، تحقق من النتائج. / Use tools like iperf or speedtest, test between camera and server, check results."
+    },
+    {
+      "question": "مشكلة الكاميرا تسخن بسرعة / Camera overheating issue",
+      "answer": "تحقق من التهوية، نظّف المروحة، قلل الإضاءة من مصادر خارجية، أضف مشتت حرارة. / Check ventilation, clean fan, reduce external light, add heat sink."
+    },
+    {
+      "question": "كيفية تحسين جودة الصورة / How to improve image quality",
+      "answer": "ضع الكاميرا بزاوية صحيحة، أضف إضاءة، استخدم مستشعر بدقة أعلى، نظّف العدسة. / Position camera correctly, add lighting, use higher resolution sensor, clean lens."
+    },
+    {
+      "question": "مشكلة الانعكاس على الزجاج / Glass reflection problem",
+      "answer": "ضع الكاميرا بزاوية 45 درجة، استخدم مرشح استقطاب، أضف ضوء من الجانب. / Position camera at 45 degrees, use polarizing filter, add side lighting."
+    },
+    {
+      "question": "كيفية التعامل مع الكاميرات الكثيرة / Managing many cameras",
+      "answer": "استخدم مجموعات الكاميرات، اضبط التنبيهات الذكية، استخدم لوحات مراقبة مخصصة. / Use camera groups, set smart alerts, use dedicated dashboards."
+    },
+    {
+      "question": "أفضل نسبة أمان كلمات المرور / Password security ratio",
+      "answer": "12+ أحرف، حروف كبيرة وصغيرة، أرقام، رموز خاصة، تغيير كل 90 يوم. / 12+ chars, upper/lowercase, numbers, symbols, change every 90 days."
+    },
+    {
+      "question": "كيفية تحديد الفيديو المشبوه / How to identify suspicious video",
+      "answer": "ابحث عن حركة غير عادية، تغيير في الإضاءة، أشكال غير متوقعة. / Look for unusual movement, lighting change, unexpected shapes."
+    },
+    {
+      "question": "ما هو أفضل معيار لـ aspect ratio / Best aspect ratio",
+      "answer": "16:9 للمراقبة العامة، 1:1 للتفاصيل، 4:3 للمساحات الضيقة. / 16:9 for general, 1:1 for details, 4:3 for tight spaces."
+    },
+    {
+      "question": "What cameras does MTI offer? / ما نوع الكاميرات التي توفرها MTI؟",
+      "answer": "PTZ with 30x zoom, LPR, thermal, 4K IP cameras, multi-sensor units. / كاميرات PTZ مع تكبير 30x، LPR، حرارية، 4K IP، وحدات متعددة الاستشعار."
+    },
+    {
+      "question": "System uptime guarantee / ضمان وقت التشغيل",
+      "answer": "99.7% overall, 99.99% for Core API, 42ms average response. / 99.7% إجمالي، 99.99% لـ Core API، متوسط استجابة 42ms."
+    }
+  ],
+  "deployment": {
+    "phases": [
+      {
+        "phase": 1,
+        "name": "Assessment & Planning",
+        "duration": "1-2 weeks",
+        "activities": ["Site survey", "Infrastructure review", "Requirements analysis", "Custom solution design"]
+      },
+      {
+        "phase": 2,
+        "name": "Installation & Integration",
+        "duration": "2-4 weeks",
+        "activities": ["Equipment installation", "Network setup", "System integration", "Firmware configuration"]
+      },
+      {
+        "phase": 3,
+        "name": "Testing & Optimization",
+        "duration": "1-2 weeks",
+        "activities": ["System testing", "Performance optimization", "Security hardening", "Quality assurance"]
+      },
+      {
+        "phase": 4,
+        "name": "Training & Go-Live",
+        "duration": "1 week",
+        "activities": ["Staff training", "Documentation handover", "System go-live", "Transition to support"]
+      }
+    ],
+    "support": "24/7 monitoring, maintenance, and technical support post-deployment"
+  },
+  "troubleshooting": {
+    "commonIssues": [
+      {
+        "issue": "Camera not showing video feed",
+        "solutions": [
+          "Check network connectivity and IP configuration",
+          "Verify camera power supply",
+          "Check firewall and port forwarding settings",
+          "Restart camera device",
+          "Update camera firmware"
+        ]
+      },
+      {
+        "issue": "Poor video quality or low frame rate",
+        "solutions": [
+          "Check network bandwidth utilization",
+          "Adjust camera resolution settings",
+          "Check lighting conditions",
+          "Update network drivers",
+          "Optimize network infrastructure"
+        ]
+      },
+      {
+        "issue": "Unable to connect to cloud services",
+        "solutions": [
+          "Verify internet connection",
+          "Check firewall/proxy settings",
+          "Verify API credentials",
+          "Check account status and limits",
+          "Restart system"
+        ]
+      },
+      {
+        "issue": "Analytics not generating alerts",
+        "solutions": [
+          "Verify analytics module is enabled",
+          "Check alert configuration",
+          "Review detection sensitivity settings",
+          "Verify notification channels are configured",
+          "Check system logs for errors"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "email": "support@mti-engineering.com",
+    "phone": "+20 (Egypt) | +966 (Saudi Arabia) | +971 (UAE)",
+    "responseTime": "Under 5 minutes for critical issues",
+    "availability": "24/7"
+  }
+}
