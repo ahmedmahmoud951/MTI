@@ -226,11 +226,24 @@ mti-engineering/
 ## 📄 Pages
 
 ### Homepage (`/`)
-- Interactive building visualization
-- Statistics showcase
-- Feature highlights
-- Testimonials
-- Call-to-action sections
+- **File:** `app/page.tsx`
+- **Sections:**
+  - **Hero:** Fullscreen image `/images/hero.jpg` with overlay intro and CTA context
+  - **Hero Metrics:** Four KPI cards sourced from `heroMetrics` array for establishment, turnover, footprint, and delivery team
+  - **Vision & Mission + Highlights:** Split grid presenting narrative copy and bullet highlights
+  - **Stats Grid:** Four quantitative cards detailing founding, turnover, employees, and footprint
+  - **Market Segments & Achievements:** Two-column layout mixing narrative, chip list, and KPI cards
+  - **Core Domains:** 9-card grid covering operations focus areas
+  - **Strategic Fundamentals:** 6-card grid of guiding principles
+  - **CTA:** Partner invitation with dual buttons linking to `contact` and `projects`
+- **Assets:**
+  - `/public/images/hero.jpg`
+  - `/public/images/structure.jpg`
+  - `/public/images/achievements.jpg`
+  - `/public/images/glance.jpg`
+  - `/public/images/software.jpg`
+  - `/public/images/fields.jpg`
+- **Responsive Notes:** All grids fall back to single-column on small screens, typography scales via `text-3xl sm:text-4xl`, and padding uses `px-4 sm:px-6` to ensure readable spacing.
 
 ### About (`/about`)
 - Company history since 1995

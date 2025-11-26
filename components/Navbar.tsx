@@ -43,7 +43,7 @@ export function Navbar() {
                 />
                 <div className="hidden sm:flex flex-col leading-tight">
                   <span className="text-2xl font-black cyber-text tracking-wide">MTI</span>
-                  <span className="text-sm uppercase tracking-[0.4em] text-blue-300">Engineering</span>
+                  <span className="text-sm uppercase tracking-[0.4em] text-blue-300">HOLDING</span>
                 </div>
               </Link>
             </div>
