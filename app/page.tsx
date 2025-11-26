@@ -148,7 +148,7 @@ export default function Home() {
       <section className="relative border-b border-slate-800/30 bg-gradient-to-r from-slate-900/50 via-slate-950 to-slate-900/50 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent"></div>
         <div className="relative mx-auto max-w-6xl px-6 py-20">
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {heroMetrics.map((metric, index) => (
               <div
                 key={metric.label}
