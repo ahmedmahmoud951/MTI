@@ -115,7 +115,7 @@ export default function Home() {
       <main className="bg-slate-950 text-white">
       <section className="relative border-b border-slate-800/50 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 via-transparent to-cyan-900/10"></div>
-        <div className="relative mx-auto max-w-7xl px-6 py-32">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-24 md:py-32">
           <div className="relative">
             <div className="overflow-hidden rounded-3xl border border-slate-700/50 bg-slate-900/80 shadow-2xl shadow-blue-500/20 backdrop-blur-sm">
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
@@ -147,8 +147,8 @@ export default function Home() {
 
       <section className="relative border-b border-slate-800/30 bg-gradient-to-r from-slate-900/50 via-slate-950 to-slate-900/50 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent"></div>
-        <div className="relative mx-auto max-w-6xl px-6 py-20">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-16 md:py-20">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {heroMetrics.map((metric, index) => (
               <div
                 key={metric.label}
@@ -169,7 +169,7 @@ export default function Home() {
 
       <section className="relative border-b border-slate-800/30 bg-gradient-to-b from-slate-950 to-slate-900/50 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/5 via-transparent to-blue-900/5"></div>
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.3fr,0.7fr]">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 py-20 lg:grid-cols-[1.3fr,0.7fr]">
           <div className="space-y-8">
             {visionMission.map((item, index) => (
               <div
@@ -214,7 +214,7 @@ export default function Home() {
       <section className="relative border-b border-slate-800/30 bg-gradient-to-b from-slate-900/30 to-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/5 via-transparent to-blue-900/5"></div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-20">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
               <div
@@ -241,7 +241,7 @@ export default function Home() {
 
       <section className="relative border-b border-slate-800/30 bg-gradient-to-b from-slate-950 to-slate-900/50">
         <div className="absolute inset-0 bg-gradient-to-r from-green-900/5 via-transparent to-orange-900/5"></div>
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 py-20 lg:grid-cols-2">
           <div
             className="group relative rounded-3xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/60 p-10 shadow-xl shadow-slate-900/30 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-500"
           >
@@ -326,7 +326,7 @@ export default function Home() {
       <section className="relative border-b border-slate-800/30 bg-gradient-to-b from-slate-900/30 to-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/5 via-transparent to-teal-900/5"></div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-20">
           <div
             className="mb-16 text-center"
           >
@@ -376,7 +376,7 @@ export default function Home() {
       <section className="relative py-24 bg-gradient-to-b from-slate-950 to-slate-900/50 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/10 via-transparent to-slate-900/10"></div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1.2fr,0.8fr]">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-[1.2fr,0.8fr]">
           <div
             className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
           >
