@@ -120,7 +120,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-3xl border border-slate-700/50 bg-slate-900/80 shadow-2xl shadow-blue-500/20 backdrop-blur-sm">
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
               <Image
-                src="/1659540133081.jfif"
+                src="/images/hero.jpg"
                 alt="MTI Group headquarters"
                 width={1920}
                 height={1080}
