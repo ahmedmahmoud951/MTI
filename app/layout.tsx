@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { Chatbot } from '@/components/Chatbot'
@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: 'MTI Engineering Solutions',
   description: 'Leading engineering solutions company since 1995. Digital Twin, IoT, and Advanced Surveillance Systems.',
   keywords: 'engineering, digital twin, IoT, surveillance, smart solutions',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
