@@ -9,19 +9,15 @@ export function Footer() {
     {
       title: 'Product',
       links: [
-        { label: 'R&D Lab', href: '/rd-lab' },
         { label: 'Dashboard', href: '/dashboard' },
         { label: 'Digital Twin', href: '/digital-twin' },
         { label: '3D Visualization', href: '/visualization' },
-        { label: 'AR/VR Solutions', href: '/ar-vr' },
       ],
     },
     {
       title: 'Company',
       links: [
         { label: 'About', href: '/about' },
-        { label: 'News & Blog', href: '/news' },
-        { label: 'History', href: '/history' },
         { label: 'Careers', href: '/careers' },
         { label: 'Contact', href: '/contact' },
       ],
