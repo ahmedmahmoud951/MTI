@@ -77,9 +77,9 @@ export default function Technology() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const videoRef = useRef<HTMLVideoElement>(null)
   const videos = [
-    '/Active Guard/ActiveGuard 1.mp4',
-    '/Active Guard/ActiveGuard 2.mp4',
-    '/Active Guard/ActiveGuard 3.mp4',
+    'https://cdn.jsdelivr.net/gh/ahmedmahmoud951/MTI@main/public/Active%20Guard/ActiveGuard%201.mp4',
+    'https://cdn.jsdelivr.net/gh/ahmedmahmoud951/MTI@main/public/Active%20Guard/ActiveGuard%202.mp4',
+    'https://cdn.jsdelivr.net/gh/ahmedmahmoud951/MTI@main/public/Active%20Guard/ActiveGuard%203.mp4',
   ]
 
   useEffect(() => {
