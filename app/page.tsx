@@ -121,7 +121,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
               <Image
                 src="/images/hero.jpg"
-                alt="MTI Group headquarters"
+                alt="MTI Engineering Solutions headquarters"
                 width={1920}
                 height={1080}
                 className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"

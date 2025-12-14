@@ -32,10 +32,10 @@ export function Navbar() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-6">
             <div>
-              <Link href="/" className="flex items-center gap-4 group" aria-label="MTI Group home">
+              <Link href="/" className="flex items-center gap-4 group" aria-label="MTI Engineering Solutions home">
                 <Image
                   src="/pdf-assets/mti_page01_img02.jpeg"
-                  alt="MTI Group logo"
+                  alt="MTI Engineering Solutions logo"
                   width={80}
                   height={80}
                   className="w-16 h-16 lg:w-20 lg:h-20 object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-110"
@@ -43,7 +43,7 @@ export function Navbar() {
                 />
                 <div className="hidden sm:flex flex-col leading-tight">
                   <span className="text-2xl font-black cyber-text tracking-wide">MTI</span>
-                  <span className="text-sm uppercase tracking-[0.4em] text-blue-300">HOLDING</span>
+                  <span className="text-xs uppercase tracking-[0.5em] bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">Engineering</span>
                 </div>
               </Link>
             </div>

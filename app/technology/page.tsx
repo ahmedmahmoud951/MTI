@@ -227,7 +227,7 @@ export default function Technology() {
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold cyber-text mb-4">Technology Gallery</h2>
-            <p className="text-gray-400 text-lg">Reference visuals extracted from the MTI Group corporate profile.</p>
+            <p className="text-gray-400 text-lg">Reference visuals extracted from the MTI Engineering Solutions corporate profile.</p>
           </motion.div>
 
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 gap-8">

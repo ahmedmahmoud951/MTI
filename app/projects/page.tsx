@@ -194,12 +194,12 @@ export default function Projects() {
           <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-cyan-500/10 blur-[120px]" />
         </div>
         <div className="relative max-w-5xl mx-auto px-4 space-y-6 text-center">
-          <p className="text-blue-300 uppercase tracking-[0.4em] text-xs mb-4">Success Stories · MTI Group</p>
+          <p className="text-blue-300 uppercase tracking-[0.4em] text-xs mb-4">Success Stories · MTI Engineering Solutions</p>
           <h1 className="text-4xl md:text-6xl font-bold cyber-text mb-6">
             Real Programs Securing Egypt&apos;s Critical Infrastructure
           </h1>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Every project listed here is sourced directly from the MTI Group corporate profile dated 15 September 2025. Transforming national security, commerce, and mobility across MENA.
+            Every project listed here is sourced directly from MTI Engineering Solutions&apos; corporate profile dated 15 September 2025. Transforming national security, commerce, and mobility across MENA.
           </p>
         </div>
       </section>

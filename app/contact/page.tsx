@@ -59,13 +59,13 @@ export default function Contact() {
       <section className="pt-28 pb-16 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         <div className="max-w-6xl mx-auto px-4 text-center space-y-6">
           <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-blue-300 uppercase tracking-[0.4em] text-xs">
-            Official Contact · MTI Group
+            Official Contact · MTI Engineering Solutions
           </motion.p>
           <motion.h1 initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="text-4xl md:text-6xl font-bold cyber-text">
             Let’s Plan Your Next Deployment
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Reach the MTI headquarters in Cairo for national programs, regional partnerships, or support requests. Official details are sourced directly from the MTI Group Corporate Profile (15 Sep 2025).
+            Reach the MTI Engineering Solutions headquarters in Cairo for national programs, regional partnerships, or support requests. Official details are sourced directly from MTI&apos;s Corporate Profile (15 Sep 2025).
           </motion.p>
         </div>
       </section>

@@ -126,7 +126,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-6xl font-bold cyber-text"
           >
-            About Misr Trade & Investment (MTI)
+            MTI Engineering Solutions
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-300"
           >
-            Established in 1969, MTI Group delivers security, communications, and smart-city infrastructure across Egypt and the wider MENA region.
+            Established in 1969, MTI Engineering Solutions delivers security, communications, and smart-city infrastructure across Egypt and the wider MENA region.
           </motion.p>
         </div>
       </section>
@@ -167,7 +167,7 @@ export default function About() {
         >
           <h2 className="text-3xl font-bold text-yellow-400 mb-6">Our Story</h2>
           <p className="text-gray-300 leading-relaxed mb-4 text-lg">
-            MTI Group began as a visionary trading and technology enterprise and evolved into a diversified organization serving national security, infrastructure, and consumer markets. The group’s leadership continues to invest in large-scale surveillance, ICT, tolling, and cyber programs that reinforce Egypt’s digital future.
+            MTI Engineering Solutions began as a visionary trading and technology enterprise and evolved into a diversified organization serving national security, infrastructure, and consumer markets. Our leadership continues to invest in large-scale surveillance, ICT, tolling, and cyber programs that reinforce Egypt&apos;s digital future.
           </p>
           <ul className="space-y-4">
             {highlights.map((item) => (

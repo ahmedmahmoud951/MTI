@@ -201,13 +201,13 @@ export default function Services() {
       <section className="pt-28 pb-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         <div className="max-w-6xl mx-auto px-4 text-center space-y-6">
           <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-blue-300 uppercase tracking-[0.4em] text-xs">
-            Since 1969 · Misr Trade & Investment Group
+            Since 1969 · MTI Engineering Solutions
           </motion.p>
           <motion.h1 initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="text-4xl md:text-6xl font-bold cyber-text">
             Mission-Critical Services for Cities, Airports, Ports, and National Programs
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            From CCTV and access control to intelligent tolling and AI analytics, MTI Group delivers turnkey systems that keep Egypt and the wider MENA region moving safely.
+            From CCTV and access control to intelligent tolling and AI analytics, MTI Engineering Solutions delivers turnkey systems that keep Egypt and the wider MENA region moving safely.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="flex flex-wrap gap-3 justify-center">
             {customerSegments.map((segment) => (
@@ -364,7 +364,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold cyber-text mb-4">Field Gallery</h2>
-            <p className="text-gray-400 text-lg">Snapshots from MTI Group programs across Egypt.</p>
+            <p className="text-gray-400 text-lg">Snapshots from MTI Engineering Solutions programs across Egypt.</p>
           </motion.div>
 
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -386,7 +386,7 @@ export default function Services() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-transparent to-blue-600/10" />
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="relative z-10 max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-3xl md:text-4xl font-bold cyber-text mb-4">Plan Your Next Deployment with MTI Group</h2>
+          <h2 className="text-3xl md:text-4xl font-bold cyber-text mb-4">Plan Your Next Deployment with MTI Engineering Solutions</h2>
           <p className="text-gray-300 text-lg mb-6">
             Share your city, airport, or industrial requirement and our engineering teams will design a tailored roadmap with visuals, KPIs, and integration milestones.
           </p>

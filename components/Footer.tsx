@@ -43,7 +43,10 @@ export function Footer() {
               <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center font-bold text-white">
                 MTI
               </div>
-              <span className="text-lg font-bold cyber-text">MTI Engineering</span>
+              <div className="flex flex-col leading-tight">
+                <span className="text-lg font-bold cyber-text">MTI</span>
+                <span className="text-xs uppercase tracking-[0.3em] bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">Engineering Solutions</span>
+              </div>
             </Link>
             <p className="text-gray-400 text-sm">
               Leading engineering solutions since 1995. Pioneering Digital Twin technology.
