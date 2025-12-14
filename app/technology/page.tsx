@@ -83,6 +83,7 @@ export default function Technology() {
     '/Active Guard/ActiveGuard 4.mp4',
     '/Active Guard/ActiveGuard 5.mp4',
     '/Active Guard/ActiveGuard 6.mp4',
+    '/Active Guard/ActiveGuard 7.mp4',
   ]
 
   useEffect(() => {
@@ -169,22 +170,22 @@ export default function Technology() {
         </div>
       </section>
 
-      <section className="py-24 relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900/50">
+      <section className="py-12 md:py-24 relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900/50">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 relative z-10">
+        <div className="w-full relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-6 md:mb-12 px-4"
           >
-            <h2 className="text-3xl md:text-5xl font-black cyber-text mb-4">See It In Action</h2>
-            <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-black cyber-text mb-3 md:mb-4">See It In Action</h2>
+            <p className="text-gray-300 text-sm md:text-lg max-w-2xl mx-auto">
               Experience the power of i-PRO Active Guard with cutting-edge AI video intelligence
             </p>
           </motion.div>
@@ -194,17 +195,17 @@ export default function Technology() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative rounded-xl sm:rounded-3xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl group"
+            className="relative mx-2 md:mx-auto md:max-w-6xl rounded-lg md:rounded-3xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl group"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-xl sm:rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-lg pointer-events-none" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-lg md:rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-lg pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-700" />
             <div className="absolute inset-0 bg-black/20" />
             
-            <div className="relative w-full bg-black">
+            <div className="relative w-full bg-black min-h-[200px] md:min-h-[400px]">
               <video
                 key={currentVideoIndex}
                 ref={videoRef}
-                className="w-full h-auto aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                 controls
                 autoPlay
                 muted
