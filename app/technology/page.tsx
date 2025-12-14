@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState, useEffect, useRef } from 'react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -73,6 +74,28 @@ const activeGuardFeatures = [
 ]
 
 export default function Technology() {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const videos = [
+    '/Active Guard/ActiveGuard 1.mp4',
+    '/Active Guard/ActiveGuard 2.mp4',
+    '/Active Guard/ActiveGuard 3.mp4',
+  ]
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleEnded = () => {
+      if (currentVideoIndex < videos.length - 1) {
+        setCurrentVideoIndex(currentVideoIndex + 1)
+      }
+    }
+
+    video.addEventListener('ended', handleEnded)
+    return () => video.removeEventListener('ended', handleEnded)
+  }, [currentVideoIndex, videos.length])
+
   return (
     <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
       <section className="pt-32 pb-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative">
@@ -166,15 +189,16 @@ export default function Technology() {
             <div className="absolute inset-0 bg-black/20" />
             
             <video
+              key={currentVideoIndex}
+              ref={videoRef}
               className="w-full h-auto aspect-video bg-black object-cover group-hover:scale-105 transition-transform duration-700"
               style={{ clipPath: 'inset(40px 0 0 0)' }}
               controls
               autoPlay
               muted
-              loop
               playsInline
             >
-              <source src="/Active Guard/ActiveGuard.mp4" type="video/mp4" />
+              <source src={videos[currentVideoIndex]} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
