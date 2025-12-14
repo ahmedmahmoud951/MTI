@@ -92,12 +92,21 @@ export default function Technology() {
     const handleEnded = () => {
       if (currentVideoIndex < videos.length - 1) {
         setCurrentVideoIndex(currentVideoIndex + 1)
+      } else {
+        setCurrentVideoIndex(0)
       }
     }
 
     video.addEventListener('ended', handleEnded)
     return () => video.removeEventListener('ended', handleEnded)
   }, [currentVideoIndex, videos.length])
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      video.play().catch(() => {})
+    }
+  }, [currentVideoIndex])
 
   return (
     <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
@@ -174,8 +183,8 @@ export default function Technology() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-black cyber-text mb-4">See It In Action</h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-black cyber-text mb-4">See It In Action</h2>
+            <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto">
               Experience the power of i-PRO Active Guard with cutting-edge AI video intelligence
             </p>
           </motion.div>
@@ -185,31 +194,36 @@ export default function Technology() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl group"
+            className="relative rounded-xl sm:rounded-3xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl group"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-lg pointer-events-none" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-xl sm:rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-lg pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-700" />
             <div className="absolute inset-0 bg-black/20" />
             
-            <video
-              key={currentVideoIndex}
-              ref={videoRef}
-              className="w-full h-auto aspect-video bg-black object-cover group-hover:scale-105 transition-transform duration-700"
-              style={{ clipPath: 'inset(40px 0 0 0)' }}
-              controls
-              autoPlay
-              muted
-              playsInline
-            >
-              <source src={videos[currentVideoIndex]} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <div className="relative w-full bg-black">
+              <video
+                key={currentVideoIndex}
+                ref={videoRef}
+                className="w-full h-auto aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
+                controls
+                autoPlay
+                muted
+                playsInline
+                onLoadedMetadata={(e) => {
+                  const video = e.currentTarget
+                  video.play().catch(() => {})
+                }}
+              >
+                <source src={videos[currentVideoIndex]} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
 
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                <div className="p-8 w-full text-white">
-                  <h3 className="text-2xl font-bold mb-2">i-PRO Active Guard Platform</h3>
-                  <p className="text-gray-200">Advanced AI-powered video intelligence for intelligent security</p>
+                <div className="p-4 sm:p-8 w-full text-white">
+                  <h3 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">i-PRO Active Guard Platform</h3>
+                  <p className="text-sm sm:text-base text-gray-200">Advanced AI-powered video intelligence for intelligent security</p>
                 </div>
               </div>
             </div>
@@ -233,7 +247,7 @@ export default function Technology() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-black cyber-text mb-4"
+              className="text-3xl md:text-5xl font-black cyber-text mb-4"
             >
               Breakthrough Capabilities
             </motion.h2>
@@ -255,7 +269,7 @@ export default function Technology() {
           >
             {activeGuardFeatures.map((feature, index) => (
               <motion.div key={feature.id} variants={itemVariants} className="group">
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${index % 2 === 1 ? 'lg:grid-cols-2' : ''}`}>
+                <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center`}>
                   {index % 2 === 0 ? (
                     <>
                       <div className="relative">
@@ -273,33 +287,34 @@ export default function Technology() {
                             alt={feature.title}
                             width={600}
                             height={400}
-                            className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700"
+                            className="w-full h-auto aspect-[3/2] object-cover group-hover:scale-110 transition-transform duration-700"
+                            priority={false}
                           />
                           <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/40 transition-all duration-500`} />
                         </motion.div>
                       </div>
 
-                      <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }} className="space-y-6">
+                      <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }} className="space-y-4 md:space-y-6">
                         <div>
-                          <p className={`text-sm font-bold uppercase tracking-[0.4em] mb-2 bg-gradient-to-r ${feature.accent} bg-clip-text text-transparent`}>
+                          <p className={`text-xs md:text-sm font-bold uppercase tracking-[0.4em] mb-2 bg-gradient-to-r ${feature.accent} bg-clip-text text-transparent`}>
                             {feature.subtitle}
                           </p>
-                          <h3 className="text-4xl font-black text-white mb-4">{feature.title}</h3>
+                          <h3 className="text-2xl md:text-4xl font-black text-white mb-3 md:mb-4">{feature.title}</h3>
                         </div>
-                        <p className="text-gray-300 text-lg leading-relaxed">{feature.description}</p>
+                        <p className="text-gray-300 text-base md:text-lg leading-relaxed">{feature.description}</p>
                         <div className={`w-12 h-1 bg-gradient-to-r ${feature.accent} rounded-full`} />
                       </motion.div>
                     </>
                   ) : (
                     <>
-                      <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }} className="space-y-6">
+                      <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }} className="space-y-4 md:space-y-6">
                         <div>
-                          <p className={`text-sm font-bold uppercase tracking-[0.4em] mb-2 bg-gradient-to-r ${feature.accent} bg-clip-text text-transparent`}>
+                          <p className={`text-xs md:text-sm font-bold uppercase tracking-[0.4em] mb-2 bg-gradient-to-r ${feature.accent} bg-clip-text text-transparent`}>
                             {feature.subtitle}
                           </p>
-                          <h3 className="text-4xl font-black text-white mb-4">{feature.title}</h3>
+                          <h3 className="text-2xl md:text-4xl font-black text-white mb-3 md:mb-4">{feature.title}</h3>
                         </div>
-                        <p className="text-gray-300 text-lg leading-relaxed">{feature.description}</p>
+                        <p className="text-gray-300 text-base md:text-lg leading-relaxed">{feature.description}</p>
                         <div className={`w-12 h-1 bg-gradient-to-r ${feature.accent} rounded-full`} />
                       </motion.div>
 
@@ -318,7 +333,8 @@ export default function Technology() {
                             alt={feature.title}
                             width={600}
                             height={400}
-                            className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700"
+                            className="w-full h-auto aspect-[3/2] object-cover group-hover:scale-110 transition-transform duration-700"
+                            priority={false}
                           />
                           <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/40 transition-all duration-500`} />
                         </motion.div>
@@ -337,8 +353,8 @@ export default function Technology() {
 
         <div className="max-w-6xl mx-auto px-4 relative z-10 text-center space-y-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-            <h2 className="text-4xl md:text-5xl font-black cyber-text mb-4">Why Choose Active Guard?</h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-black cyber-text mb-4">Why Choose Active Guard?</h2>
+            <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto">
               Enterprise-grade AI security that scales from single sites to nationwide deployments
             </p>
           </motion.div>
@@ -359,13 +375,13 @@ export default function Technology() {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className={`group relative p-8 rounded-2xl bg-gradient-to-br ${item.color} border border-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm overflow-hidden`}
+                className={`group relative p-4 md:p-8 rounded-2xl bg-gradient-to-br ${item.color} border border-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm overflow-hidden`}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="relative z-10">
-                  <div className="text-6xl mb-4 inline-block p-3 rounded-xl bg-white/5 group-hover:bg-white/10 transition-all duration-300">{item.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">{item.title}</h3>
-                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">{item.desc}</p>
+                  <div className="text-4xl md:text-6xl mb-4 inline-block p-3 rounded-xl bg-white/5 group-hover:bg-white/10 transition-all duration-300">{item.icon}</div>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">{item.title}</h3>
+                  <p className="text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -382,7 +398,7 @@ export default function Technology() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black cyber-text"
+            className="text-3xl md:text-5xl font-black cyber-text"
           >
             Ready to Transform Your Security?
           </motion.h2>
@@ -391,7 +407,7 @@ export default function Technology() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-gray-300 text-lg"
+            className="text-gray-300 text-base md:text-lg"
           >
             Discover how i-PRO Active Guard delivers intelligent video analytics, forensic search capabilities, and actionable threat intelligence across your entire security infrastructure.
           </motion.p>
