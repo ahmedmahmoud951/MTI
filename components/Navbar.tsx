@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,19 +33,61 @@ export function Navbar() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-6">
             <div>
-              <Link href="/" className="flex items-center gap-4 group" aria-label="MTI Engineering Solutions home">
-                <Image
-                  src="/pdf-assets/mti_page01_img02.jpeg"
-                  alt="MTI Engineering Solutions logo"
-                  width={80}
-                  height={80}
-                  className="w-16 h-16 lg:w-20 lg:h-20 object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-110"
-                  priority
-                />
-                <div className="hidden sm:flex flex-col leading-tight">
-                  <span className="text-2xl font-black cyber-text tracking-wide">MTI</span>
-                  <span className="text-xs uppercase tracking-[0.5em] bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">Engineering</span>
-                </div>
+              <Link href="/" className="flex items-center gap-3 group" aria-label="MTI Engineering Solutions home">
+                <motion.div
+                  className="relative"
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  transition={{ duration: 0.4, type: 'spring', stiffness: 200 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-500 blur-xl" />
+                  <Image
+                    src="/pdf-assets/mti_page01_img02.jpeg"
+                    alt="MTI Engineering Solutions logo"
+                    width={80}
+                    height={80}
+                    className="w-16 h-16 lg:w-20 lg:h-20 object-contain drop-shadow-xl transition-all duration-500 relative z-10 rounded-xl"
+                    priority
+                  />
+                </motion.div>
+
+                <motion.div 
+                  className="hidden sm:flex flex-col leading-none gap-1"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="flex items-baseline gap-2 group/text">
+                    <motion.span 
+                      className="text-xl lg:text-2xl font-black cyber-text tracking-widest"
+                      whileHover={{ scale: 1.1, color: '#06b6d4' }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      MTI
+                    </motion.span>
+                    <motion.span 
+                      className="text-xs lg:text-sm uppercase tracking-[0.25em] bg-gradient-to-r from-blue-300 via-cyan-300 to-white bg-clip-text text-transparent font-bold"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      ENGINEERING
+                    </motion.span>
+                  </div>
+                  
+                  <motion.div
+                    className="relative px-2 py-1 rounded-lg overflow-hidden"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <motion.span 
+                      className="text-xs lg:text-sm uppercase tracking-[0.4em] bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent font-bold relative z-10"
+                      animate={{ opacity: [1, 0.7, 1] }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                    >
+                      Solutions
+                    </motion.span>
+                  </motion.div>
+                </motion.div>
               </Link>
             </div>
 

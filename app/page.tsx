@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const heroMetrics = [
   { label: 'Established', value: '1969' },
@@ -113,45 +114,93 @@ export default function Home() {
   return (
     <>
       <main className="bg-slate-950 text-white">
-      <section className="relative border-b border-slate-800/50 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 via-transparent to-cyan-900/10"></div>
+      <section className="relative border-b border-slate-800/50 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden pt-24">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/20 rounded-full mix-blend-screen filter blur-3xl animate-float" />
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-500/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse-slow" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/10 rounded-full mix-blend-screen filter blur-3xl" />
+        </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-24 md:py-32">
-          <div className="relative">
-            <div className="overflow-hidden rounded-3xl border border-slate-700/50 bg-slate-900/80 shadow-2xl shadow-blue-500/20 backdrop-blur-sm">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative group"
+          >
+            <motion.div
+              className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-lg pointer-events-none"
+              animate={{ opacity: [0.2, 0.4, 0.2] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+            <div className="overflow-hidden rounded-3xl border border-slate-700/50 bg-slate-900/80 shadow-2xl shadow-blue-500/20 backdrop-blur-sm relative group">
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
-              <Image
-                src="/images/hero.jpg"
-                alt="MTI Engineering Solutions headquarters"
-                width={1920}
-                height={1080}
-                className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                priority
-                quality={90}
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRjWjBqO6O2mhP//Z"
-              />
+              <motion.div
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.7 }}
+                className="overflow-hidden"
+              >
+                <Image
+                  src="/images/hero.jpg"
+                  alt="MTI Engineering Solutions headquarters"
+                  width={1920}
+                  height={1080}
+                  className="h-full w-full object-cover"
+                  priority
+                  quality={90}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+IRjWjBqO6O2mhP//Z"
+                />
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section className="relative border-b border-slate-800/30 bg-gradient-to-r from-slate-900/50 via-slate-950 to-slate-900/50 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent"></div>
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-16 md:py-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-black cyber-text mb-2">Key Metrics</h2>
+            <p className="text-gray-400 text-lg">Delivering Excellence Since 1969</p>
+          </motion.div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {heroMetrics.map((metric, index) => (
-              <div
+              <motion.div
                 key={metric.label}
-                className="group relative rounded-3xl border border-slate-700/60 bg-gradient-to-br from-slate-900/80 to-slate-800/60 p-8 text-center shadow-lg shadow-slate-900/50 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 hover:border-blue-500/50 hover:scale-105 hover:-translate-y-2"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative rounded-3xl border border-slate-700/60 bg-gradient-to-br from-slate-900/80 to-slate-800/60 p-8 text-center shadow-lg shadow-slate-900/50 transition-all duration-500 overflow-hidden"
               >
+                <motion.div
+                  className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-lg pointer-events-none"
+                  animate={{ opacity: [0.1, 0.3, 0.1] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                <div className="relative z-10">
-                  <p className="text-4xl font-bold text-white mb-2 transition-transform duration-300 group-hover:scale-110">
+                <motion.div 
+                  className="relative z-10"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.p 
+                    className="text-4xl font-bold text-white mb-2"
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     {metric.value}
-                  </p>
+                  </motion.p>
                   <p className="text-sm uppercase tracking-wider text-blue-300 font-medium">{metric.label}</p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -162,42 +211,80 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 py-20 lg:grid-cols-[1.3fr,0.7fr]">
           <div className="space-y-8">
             {visionMission.map((item, index) => (
-              <div
+              <motion.div
                 key={item.title}
-                className="group relative rounded-3xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/60 p-10 shadow-xl shadow-slate-900/30 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:border-blue-500/50"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="group relative rounded-3xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/60 p-10 shadow-xl shadow-slate-900/30 transition-all duration-500 overflow-hidden"
               >
+                <motion.div
+                  className="absolute -inset-1 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-lg pointer-events-none"
+                  animate={{ opacity: [0.1, 0.25, 0.1] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                <div className="relative z-10">
-                  <h3 className="mb-4 text-3xl font-bold text-blue-200 cyber-text transition-all duration-300 group-hover:text-blue-100 group-hover:scale-105">
+                <motion.div className="relative z-10" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
+                  <motion.h3 
+                    className="mb-4 text-3xl font-bold text-blue-200 cyber-text transition-all duration-300 group-hover:text-blue-100"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     {item.title}
-                  </h3>
+                  </motion.h3>
                   <p className="text-slate-300 text-lg leading-relaxed transition-all duration-300 group-hover:text-slate-200">
                     {item.content}
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
 
-          <div className="group relative rounded-3xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/60 p-10 shadow-xl shadow-slate-900/30 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:border-cyan-500/50">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="group relative rounded-3xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/60 p-10 shadow-xl shadow-slate-900/30 transition-all duration-500 overflow-hidden"
+          >
+            <motion.div
+              className="absolute -inset-1 bg-gradient-to-br from-cyan-500 to-blue-400 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-lg pointer-events-none"
+              animate={{ opacity: [0.1, 0.25, 0.1] }}
+              transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
+            />
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-            <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-white mb-4 cyber-text transition-all duration-300 group-hover:text-cyan-100 group-hover:scale-105">
+            <motion.div className="relative z-10" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
+              <motion.h3 
+                className="text-3xl font-bold text-white mb-4 cyber-text transition-all duration-300 group-hover:text-cyan-100"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
                 Operational Highlights
-              </h3>
+              </motion.h3>
               <p className="mb-8 text-slate-400 text-base transition-all duration-300 group-hover:text-slate-300">
                 Consistent delivery against strategic programs across MENA.
               </p>
               <ul className="space-y-5 text-slate-200">
                 {highlights.map((highlight, index) => (
-                  <li key={highlight} className="flex items-start gap-3 leading-relaxed hover:bg-slate-800/30 p-3 rounded-lg transition-all duration-300 hover:scale-105">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0 transition-all duration-300 group-hover/item:bg-blue-300 group-hover/item:scale-125"></div>
-                    <span className="transition-all duration-300 group-hover/item:text-blue-200">{highlight}</span>
-                  </li>
+                  <motion.li 
+                    key={highlight} 
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-start gap-3 leading-relaxed hover:bg-slate-800/30 p-3 rounded-lg transition-all duration-300"
+                  >
+                    <motion.div 
+                      className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0 transition-all duration-300"
+                      whileHover={{ scale: 1.5, backgroundColor: '#3b82f6' }}
+                    ></motion.div>
+                    <span className="transition-all duration-300 group-hover:text-blue-200">{highlight}</span>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
