@@ -25,15 +25,13 @@ const itemVariants = {
   },
 }
 
-const VERCEL_BLOB_URL = 'https://mti.blob.vercel-storage.com'
-
 const activeGuardFeatures = [
   {
     id: 1,
     title: 'Intelligent Text Search',
     subtitle: 'Generative AI-Powered Discovery',
     description: 'Revolutionary free-text search powered by Generative AI empowers security teams to flexibly filter recorded footage within video management systems (VMS) using natural language input for precise people and vehicle searches. Transform hours of investigation into seconds.',
-    image: `${VERCEL_BLOB_URL}/182661.webp`,
+    image: '/Active Guard/182661.webp',
     accent: 'from-blue-500 to-cyan-400',
     borderColor: 'border-blue-500/40',
   },
@@ -42,7 +40,7 @@ const activeGuardFeatures = [
     title: 'Visual Similarity Engine',
     subtitle: 'Smart Person Matching',
     description: 'Advanced image similarity search enables operators to locate visually similar appearances within video footage, supporting rapid investigations without relying on personal attributes. Find suspects by appearance alone, not by profile.',
-    image: `${VERCEL_BLOB_URL}/182666.webp`,
+    image: '/Active Guard/182666.webp',
     accent: 'from-purple-500 to-pink-400',
     borderColor: 'border-purple-500/40',
   },
@@ -51,7 +49,7 @@ const activeGuardFeatures = [
     title: 'Advanced Person Detection',
     subtitle: 'Multi-Attribute Classification',
     description: 'Sophisticated AI extracts and classifies facial characteristics and clothing into rich categories including gender, age, color, and accessories. Process up to 20 people simultaneously with precision detection starting at 60px width. Optimized for 50+ lux illumination.',
-    image: `${VERCEL_BLOB_URL}/AI%20People%20Detectionimage.jpg`,
+    image: '/Active Guard/AI People Detectionimage.jpg',
     accent: 'from-emerald-500 to-teal-400',
     borderColor: 'border-emerald-500/40',
   },
@@ -60,7 +58,7 @@ const activeGuardFeatures = [
     title: 'Intelligent Motion Analytics',
     subtitle: 'AI-Driven Video Intelligence',
     description: 'AI-VMD (Artificial Intelligence Video Motion Detection) delivers enterprise-grade threat detection: intruder identification, cross-line detection, loitering alerts, direction tracking, speeding identification, and real-time people counting. Threats detected instantly at the edge.',
-    image: `${VERCEL_BLOB_URL}/AI-VMD.webp`,
+    image: '/Active Guard/AI-VMD.webp',
     accent: 'from-orange-500 to-red-400',
     borderColor: 'border-orange-500/40',
   },
@@ -69,7 +67,7 @@ const activeGuardFeatures = [
     title: 'Enterprise Architecture',
     subtitle: 'Distributed Intelligence System',
     description: 'i-PRO Active Guard stores the finest images and rich metadata captured by edge AI cameras, correlating with watchlists registered in client software to issue intelligent alarms when matches are found. Runs on modest hardware—no expensive servers required. Deploy anywhere.',
-    image: `${VERCEL_BLOB_URL}/system-configuration-diagram.webp`,
+    image: '/Active Guard/system-configuration-diagram.webp',
     accent: 'from-indigo-500 to-blue-400',
     borderColor: 'border-indigo-500/40',
   },
@@ -79,9 +77,12 @@ export default function Technology() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const videoRef = useRef<HTMLVideoElement>(null)
   const videos = [
-    `${VERCEL_BLOB_URL}/activeguard-1.mp4`,
-    `${VERCEL_BLOB_URL}/activeguard-2.mp4`,
-    `${VERCEL_BLOB_URL}/activeguard-3.mp4`,
+    '/Active Guard/ActiveGuard 1.mp4',
+    '/Active Guard/ActiveGuard 2.mp4',
+    '/Active Guard/ActiveGuard 3.mp4',
+    '/Active Guard/ActiveGuard 4.mp4',
+    '/Active Guard/ActiveGuard 5.mp4',
+    '/Active Guard/ActiveGuard 6.mp4',
   ]
 
   useEffect(() => {
