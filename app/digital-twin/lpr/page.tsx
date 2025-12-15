@@ -29,6 +29,7 @@ export default function LPR() {
   const [mounted, setMounted] = useState(false)
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const nextVideoRef = useRef<HTMLVideoElement>(null)
   
   const videos = useMemo(() => [
     '/Lpr/LPR 1.mp4',
@@ -54,6 +55,17 @@ export default function LPR() {
     video.addEventListener('ended', handleEnded)
     return () => video.removeEventListener('ended', handleEnded)
   }, [currentVideoIndex, videos.length])
+
+  useEffect(() => {
+    if (nextVideoRef.current && videos.length > 0) {
+      const nextIndex = (currentVideoIndex + 1) % videos.length
+      const nextVideo = videos[nextIndex]
+      if (nextVideo) {
+        nextVideoRef.current.src = nextVideo
+        nextVideoRef.current.load()
+      }
+    }
+  }, [currentVideoIndex, videos])
 
   return (
     <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
@@ -135,6 +147,11 @@ export default function LPR() {
                   autoPlay
                   muted
                   className="w-full h-auto"
+                />
+                <video
+                  ref={nextVideoRef}
+                  style={{ display: 'none' }}
+                  preload="auto"
                 />
                 
                 <div className="absolute bottom-4 right-4 flex gap-2">
