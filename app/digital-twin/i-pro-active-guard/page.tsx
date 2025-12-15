@@ -222,7 +222,6 @@ export default function ActiveGuard() {
                 key={currentVideoIndex}
                 ref={videoRef}
                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
-                controls
                 autoPlay
                 muted
                 playsInline
