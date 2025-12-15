@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -76,7 +76,7 @@ const activeGuardFeatures = [
 export default function ActiveGuard() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const videos = [
+  const videos = useMemo(() => [
     '/Active Guard/ActiveGuard 1.mp4',
     '/Active Guard/ActiveGuard 2.mp4',
     '/Active Guard/ActiveGuard 3.mp4',
@@ -84,7 +84,7 @@ export default function ActiveGuard() {
     '/Active Guard/ActiveGuard 5.mp4',
     '/Active Guard/ActiveGuard 6.mp4',
     '/Active Guard/ActiveGuard 7.mp4',
-  ]
+  ], [])
 
   useEffect(() => {
     const video = videoRef.current
@@ -107,7 +107,23 @@ export default function ActiveGuard() {
     if (video) {
       video.play().catch(() => {})
     }
-  }, [currentVideoIndex])
+
+    if (currentVideoIndex < videos.length - 1) {
+      const nextVideoIndex = currentVideoIndex + 1
+      const nextVideoSrc = videos[nextVideoIndex]
+      if (nextVideoSrc) {
+        const preloadVideo = document.createElement('video')
+        preloadVideo.src = nextVideoSrc
+        preloadVideo.preload = 'metadata'
+        preloadVideo.style.display = 'none'
+        document.body.appendChild(preloadVideo)
+        
+        setTimeout(() => {
+          preloadVideo.remove()
+        }, 3000)
+      }
+    }
+  }, [currentVideoIndex, videos])
 
   return (
     <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
@@ -210,6 +226,7 @@ export default function ActiveGuard() {
                 autoPlay
                 muted
                 playsInline
+                preload="metadata"
                 onLoadedMetadata={(e) => {
                   const video = e.currentTarget
                   video.play().catch(() => {})

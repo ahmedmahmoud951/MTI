@@ -3,10 +3,17 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
+import { useAnimationConfig } from '@/lib/animationConfig'
 
 export default function AccessControlProject() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+  const [mounted, setMounted] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const animConfig = useAnimationConfig()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleVideoEnd = () => {
@@ -19,6 +26,21 @@ export default function AccessControlProject() {
     if (video) {
       video.addEventListener('ended', handleVideoEnd)
       return () => video.removeEventListener('ended', handleVideoEnd)
+    }
+  }, [currentVideoIndex])
+
+  useEffect(() => {
+    if (currentVideoIndex < 30) {
+      const nextVideoIndex = currentVideoIndex + 1
+      const preloadVideo = document.createElement('video')
+      preloadVideo.src = `/Tab/Tab${nextVideoIndex + 1}.mp4`
+      preloadVideo.preload = 'metadata'
+      preloadVideo.style.display = 'none'
+      document.body.appendChild(preloadVideo)
+      
+      setTimeout(() => {
+        preloadVideo.remove()
+      }, 3000)
     }
   }, [currentVideoIndex])
 
@@ -572,6 +594,7 @@ export default function AccessControlProject() {
                 controls
                 autoPlay
                 muted
+                preload="metadata"
               >
                 <source src={`/Tab/Tab${currentVideoIndex + 1}.mp4`} type="video/mp4" />
               </video>
@@ -585,8 +608,8 @@ export default function AccessControlProject() {
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 <motion.div
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+                  animate={mounted && animConfig.enabled ? { scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] } : {}}
+                  transition={{ duration: animConfig.pulseDuration, repeat: animConfig.enabled ? Infinity : 0 }}
                   className="w-16 h-16 rounded-full border-3 border-purple-500/50 flex items-center justify-center"
                 >
                   <div className="w-0 h-0 border-l-8 border-l-transparent border-r-0 border-t-5 border-t-transparent border-b-5 border-b-transparent ml-1 opacity-60" />
