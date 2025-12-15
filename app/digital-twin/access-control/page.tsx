@@ -86,15 +86,15 @@ export default function AccessControlProject() {
       </div>
 
       {/* Header with Back Button */}
-      <section className="relative z-10 pt-16 pb-24 px-4">
+      <section className="relative z-10 pt-8 pb-12 px-3 sm:px-4 md:pt-16 md:pb-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-12"
+            className="mb-6 md:mb-12"
           >
-            <Link href="/digital-twin" className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 hover:gap-3 transition-all duration-300 font-semibold">
+            <Link href="/digital-twin" className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 hover:gap-3 transition-all duration-300 font-semibold text-sm md:text-base">
               <motion.span
                 animate={{ x: [-5, 5, -5] }}
                 transition={{ duration: 2, repeat: Infinity }}
@@ -105,7 +105,7 @@ export default function AccessControlProject() {
             </Link>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16 items-start">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -113,16 +113,16 @@ export default function AccessControlProject() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <div className="flex items-start gap-6 mb-8">
+              <div className="flex items-start gap-3 md:gap-6 mb-6 md:mb-8">
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="text-6xl md:text-7xl flex-shrink-0"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl flex-shrink-0"
                 >
                   🤖
                 </motion.div>
                 <div>
-                  <h1 className="text-4xl md:text-6xl font-black text-white mb-2 leading-tight">
+                  <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2 leading-tight">
                     <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
                       Integrated Visitor Management
                     </span>
@@ -136,11 +136,11 @@ export default function AccessControlProject() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="space-y-3 mb-12"
+                className="space-y-2 mb-6 md:mb-12"
               >
-                <div className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-red-400 to-orange-400 animate-pulse mt-2 flex-shrink-0" />
-                  <p className="text-lg text-gray-300">نظام أمني شامل يدمج التصديق، التتبع، التعرف البيومتري، والوصول الآمن لبيئة محكمة ومُراقبة</p>
+                <div className="flex items-start gap-2 md:gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-red-400 to-orange-400 animate-pulse mt-1 md:mt-2 flex-shrink-0" />
+                  <p className="text-sm sm:text-base md:text-lg text-gray-300">نظام أمني شامل يدمج التصديق، التتبع، التعرف البيومتري، والوصول الآمن لبيئة محكمة ومُراقبة</p>
                 </div>
               </motion.div>
 
@@ -148,11 +148,11 @@ export default function AccessControlProject() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="space-y-4"
+                className="space-y-3"
               >
                 <div>
-                  <h3 className="text-xl font-bold text-orange-400 mb-3">نظرة عامة على النظام</h3>
-                  <div className="space-y-3 text-gray-300 text-base leading-relaxed">
+                  <h3 className="text-lg sm:text-xl font-bold text-orange-400 mb-2 md:mb-3">نظرة عامة على النظام</h3>
+                  <div className="space-y-2 md:space-y-3 text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed">
                     <p><strong>الهدف:</strong> إدارة آمنة وفعالة للزوار (مدنيين، عسكريين، أجانب) والقوة الأساسية (الموظفين/العسكريين)، مع تكامل بيومتري للهويات (بصمات، وجوه).</p>
                     <p><strong>الفوائد:</strong> أمان عالٍ، تتبع فوري، تقارير احترافية، تحديث تلقائي للبيانات.</p>
                     <p><strong>المكونات الرئيسية:</strong></p>
@@ -171,7 +171,7 @@ export default function AccessControlProject() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="space-y-4"
+              className="space-y-3 md:space-y-4 grid grid-cols-2 lg:grid-cols-1 gap-3 md:gap-4"
             >
               {[
                 { label: 'دقة التعرف', value: '99.8%', icon: '🎯' },
@@ -186,13 +186,13 @@ export default function AccessControlProject() {
                   transition={{ delay: 0.4 + idx * 0.08 }}
                   className="relative group"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                  <div className="relative p-5 bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-lg rounded-2xl border border-white/10 group-hover:border-orange-500/40 transition-all duration-300">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-2xl">{stat.icon}</span>
-                      <span className="text-3xl font-black text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text">{stat.value}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl md:rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="relative p-3 md:p-5 bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-lg rounded-xl md:rounded-2xl border border-white/10 group-hover:border-orange-500/40 transition-all duration-300">
+                    <div className="flex items-center justify-between mb-1 md:mb-2">
+                      <span className="text-xl md:text-2xl">{stat.icon}</span>
+                      <span className="text-xl sm:text-2xl md:text-3xl font-black text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text">{stat.value}</span>
                     </div>
-                    <p className="text-sm text-gray-400">{stat.label}</p>
+                    <p className="text-xs sm:text-sm md:text-sm text-gray-400">{stat.label}</p>
                   </div>
                 </motion.div>
               ))}
@@ -202,21 +202,21 @@ export default function AccessControlProject() {
       </section>
 
       {/* System Components Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 py-32 border-t border-white/10">
+      <section className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 py-16 md:py-32 border-t border-white/10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-24"
+          className="text-center mb-12 md:mb-24"
         >
-          <div className="inline-block mb-6">
-            <div className="h-1 w-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mx-auto mb-6" />
+          <div className="inline-block mb-4 md:mb-6">
+            <div className="h-1 w-10 md:w-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mx-auto mb-4 md:mb-6" />
           </div>
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-4">مكونات النظام</h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">اكتشف كيفية عمل كل جزء من أجزاء منصتنا المتكاملة</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 md:mb-4">مكونات النظام</h2>
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">اكتشف كيفية عمل كل جزء من أجزاء منصتنا المتكاملة</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {/* Desktop Management App */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -225,41 +225,41 @@ export default function AccessControlProject() {
             className="group relative"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-cyan-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-all duration-700"
+              className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-cyan-500/20 rounded-2xl md:rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-all duration-700"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
             />
-            <div className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 backdrop-blur-2xl rounded-3xl p-8 border border-blue-500/20 group-hover:border-blue-500/60 transition-all duration-500 h-full shadow-2xl group-hover:shadow-blue-500/20">
-              <div className="flex items-start justify-between mb-4">
-                <div className="text-5xl">💻</div>
-                <div className="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center group-hover:bg-blue-500/30 transition-all">
-                  <span className="text-xl">→</span>
+            <div className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 backdrop-blur-2xl rounded-2xl md:rounded-3xl p-4 md:p-8 border border-blue-500/20 group-hover:border-blue-500/60 transition-all duration-500 h-full shadow-2xl group-hover:shadow-blue-500/20">
+              <div className="flex items-start justify-between mb-3 md:mb-4">
+                <div className="text-3xl md:text-5xl">💻</div>
+                <div className="w-10 md:w-12 h-10 md:h-12 rounded-lg md:rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center group-hover:bg-blue-500/30 transition-all">
+                  <span className="text-lg md:text-xl">→</span>
                 </div>
               </div>
-              <h3 className="text-2xl font-black text-white mb-2">تطبيق سطح المكتب</h3>
-              <p className="text-blue-300 font-semibold text-xs mb-5 opacity-80">إدارة الزوار والبوابات بكفاءة</p>
-              <ul className="space-y-2.5 text-sm text-gray-300 mb-6">
+              <h3 className="text-lg md:text-2xl font-black text-white mb-1 md:mb-2">تطبيق سطح المكتب</h3>
+              <p className="text-blue-300 font-semibold text-xs mb-3 md:mb-5 opacity-80">إدارة الزوار والبوابات بكفاءة</p>
+              <ul className="space-y-1.5 md:space-y-2.5 text-xs md:text-sm text-gray-300 mb-4 md:mb-6">
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-blue-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>إضافة، تعديل، حذف الزوار (مدني، عسكري، أجنبي)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-blue-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>إدارة البوابات ومستخدمي التابلت</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-blue-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>استيراد جماعي من Excel</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-blue-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>إدارة القائمة السوداء</span>
                 </li>
               </ul>
-              <div className="pt-4 border-t border-blue-500/20">
+              <div className="pt-3 md:pt-4 border-t border-blue-500/20">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-blue-400 font-semibold">1 فيديو</span>
-                  <div className="w-6 h-6 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-400">🎬</div>
+                  <div className="w-5 md:w-6 h-5 md:h-6 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-400">🎬</div>
                 </div>
               </div>
             </div>
@@ -273,41 +273,41 @@ export default function AccessControlProject() {
             className="group relative"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-pink-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-all duration-700"
+              className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-pink-500/20 rounded-2xl md:rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-all duration-700"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
             />
-            <div className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 backdrop-blur-2xl rounded-3xl p-8 border border-purple-500/20 group-hover:border-purple-500/60 transition-all duration-500 h-full shadow-2xl group-hover:shadow-purple-500/20">
-              <div className="flex items-start justify-between mb-4">
-                <div className="text-5xl">👆</div>
-                <div className="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center group-hover:bg-purple-500/30 transition-all">
-                  <span className="text-xl">→</span>
+            <div className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 backdrop-blur-2xl rounded-2xl md:rounded-3xl p-4 md:p-8 border border-purple-500/20 group-hover:border-purple-500/60 transition-all duration-500 h-full shadow-2xl group-hover:shadow-purple-500/20">
+              <div className="flex items-start justify-between mb-3 md:mb-4">
+                <div className="text-3xl md:text-5xl">👆</div>
+                <div className="w-10 md:w-12 h-10 md:h-12 rounded-lg md:rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center group-hover:bg-purple-500/30 transition-all">
+                  <span className="text-lg md:text-xl">→</span>
                 </div>
               </div>
-              <h3 className="text-2xl font-black text-white mb-2">نظام البيومتري</h3>
-              <p className="text-purple-300 font-semibold text-xs mb-5 opacity-80">الدخول والخروج الذكي المتقدم</p>
-              <ul className="space-y-2.5 text-sm text-gray-300 mb-6">
+              <h3 className="text-lg md:text-2xl font-black text-white mb-1 md:mb-2">نظام البيومتري</h3>
+              <p className="text-purple-300 font-semibold text-xs mb-3 md:mb-5 opacity-80">الدخول والخروج الذكي المتقدم</p>
+              <ul className="space-y-1.5 md:space-y-2.5 text-xs md:text-sm text-gray-300 mb-4 md:mb-6">
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-purple-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>قراءة البصمات بدقة &gt; 99%</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-purple-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>استخراج بيانات الهوية (OCR)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-purple-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>تسجيل آلي للدخول والخروج</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-purple-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>خوادم AI بسرعة &lt; 2 ثانية</span>
                 </li>
               </ul>
-              <div className="pt-4 border-t border-purple-500/20">
+              <div className="pt-3 md:pt-4 border-t border-purple-500/20">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-purple-400 font-semibold">31 فيديو</span>
-                  <div className="w-6 h-6 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-xs font-bold text-purple-400">🎬</div>
+                  <div className="w-5 md:w-6 h-5 md:h-6 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-xs font-bold text-purple-400">🎬</div>
                 </div>
               </div>
             </div>
@@ -321,41 +321,41 @@ export default function AccessControlProject() {
             className="group relative"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-green-500/30 to-emerald-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-all duration-700"
+              className="absolute inset-0 bg-gradient-to-br from-green-500/30 to-emerald-500/20 rounded-2xl md:rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-all duration-700"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, delay: 1 }}
             />
-            <div className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 backdrop-blur-2xl rounded-3xl p-8 border border-green-500/20 group-hover:border-green-500/60 transition-all duration-500 h-full shadow-2xl group-hover:shadow-green-500/20">
-              <div className="flex items-start justify-between mb-4">
-                <div className="text-5xl">📊</div>
-                <div className="w-12 h-12 rounded-xl bg-green-500/20 border border-green-500/40 flex items-center justify-center group-hover:bg-green-500/30 transition-all">
-                  <span className="text-xl">→</span>
+            <div className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 backdrop-blur-2xl rounded-2xl md:rounded-3xl p-4 md:p-8 border border-green-500/20 group-hover:border-green-500/60 transition-all duration-500 h-full shadow-2xl group-hover:shadow-green-500/20">
+              <div className="flex items-start justify-between mb-3 md:mb-4">
+                <div className="text-3xl md:text-5xl">📊</div>
+                <div className="w-10 md:w-12 h-10 md:h-12 rounded-lg md:rounded-xl bg-green-500/20 border border-green-500/40 flex items-center justify-center group-hover:bg-green-500/30 transition-all">
+                  <span className="text-lg md:text-xl">→</span>
                 </div>
               </div>
-              <h3 className="text-2xl font-black text-white mb-2">لوحة التحكم</h3>
-              <p className="text-green-300 font-semibold text-xs mb-5 opacity-80">التتبع والتقارير الذكية</p>
-              <ul className="space-y-2.5 text-sm text-gray-300 mb-6">
+              <h3 className="text-lg md:text-2xl font-black text-white mb-1 md:mb-2">لوحة التحكم</h3>
+              <p className="text-green-300 font-semibold text-xs mb-3 md:mb-5 opacity-80">التتبع والتقارير الذكية</p>
+              <ul className="space-y-1.5 md:space-y-2.5 text-xs md:text-sm text-gray-300 mb-4 md:mb-6">
                 <li className="flex items-start gap-2">
-                  <span className="text-green-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-green-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>لوحات تفاعلية بتحديث فوري</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-green-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>تقارير PDF شاملة باللغة العربية</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-green-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>تتبع حالة الزوار والقوة الأساسية</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                  <span className="text-green-400 font-bold mt-0.5 md:mt-1 group-hover:scale-125 transition-transform flex-shrink-0">✓</span>
                   <span>إحصائيات وسجلات تفصيلية</span>
                 </li>
               </ul>
-              <div className="pt-4 border-t border-green-500/20">
+              <div className="pt-3 md:pt-4 border-t border-green-500/20">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-green-400 font-semibold">1 فيديو</span>
-                  <div className="w-6 h-6 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-xs font-bold text-green-400">🎬</div>
+                  <div className="w-5 md:w-6 h-5 md:h-6 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-xs font-bold text-green-400">🎬</div>
                 </div>
               </div>
             </div>
@@ -364,30 +364,30 @@ export default function AccessControlProject() {
       </section>
 
       {/* Desktop App Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 py-32 border-t border-white/10">
+      <section className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 py-12 md:py-32 border-t border-white/10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-16"
+          className="mb-8 md:mb-16"
         >
-          <div className="flex items-center gap-6 mb-8">
+          <div className="flex items-center gap-3 md:gap-6 mb-6 md:mb-8">
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/30 to-cyan-500/20 border border-blue-500/50 text-2xl"
+              className="flex items-center justify-center w-10 md:w-14 h-10 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br from-blue-500/30 to-cyan-500/20 border border-blue-500/50 text-xl md:text-2xl flex-shrink-0"
             >
               💻
             </motion.div>
             <div>
-              <h2 className="text-5xl md:text-6xl font-black text-white mb-2">تطبيق سطح المكتب</h2>
-              <p className="text-blue-300 text-base font-medium">إدارة الزوار والبوابات بكفاءة عالية</p>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2">تطبيق سطح المكتب</h2>
+              <p className="text-blue-300 text-xs sm:text-sm md:text-base font-medium">إدارة الزوار والبوابات بكفاءة عالية</p>
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur rounded-3xl p-8 border border-blue-500/30 mb-8">
-            <h3 className="text-xl font-bold text-blue-200 mb-4">الوصف</h3>
-            <div className="space-y-3 text-gray-300">
+          <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur rounded-2xl md:rounded-3xl p-4 md:p-8 border border-blue-500/30 mb-6 md:mb-8">
+            <h3 className="text-lg md:text-xl font-bold text-blue-200 mb-3 md:mb-4">الوصف</h3>
+            <div className="space-y-2 md:space-y-3 text-gray-300 text-sm md:text-base">
               <p>تطبيق سطح مكتب لإدارة تصديق الزوار والبوابات بكفاءة عالية.</p>
               <ul className="space-y-2 ml-4">
                 <li className="flex items-start gap-3">
@@ -452,30 +452,30 @@ export default function AccessControlProject() {
       </section>
 
       {/* Biometric System Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 py-32 border-t border-white/10">
+      <section className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 py-12 md:py-32 border-t border-white/10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-16"
+          className="mb-8 md:mb-16"
         >
-          <div className="flex items-center gap-6 mb-8">
+          <div className="flex items-center gap-3 md:gap-6 mb-6 md:mb-8">
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 3, repeat: Infinity, delay: 0.3 }}
-              className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500/30 to-pink-500/20 border border-purple-500/50 text-2xl"
+              className="flex items-center justify-center w-10 md:w-14 h-10 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br from-purple-500/30 to-pink-500/20 border border-purple-500/50 text-xl md:text-2xl flex-shrink-0"
             >
               👆
             </motion.div>
             <div>
-              <h2 className="text-5xl md:text-6xl font-black text-white mb-2">نظام البيومتري</h2>
-              <p className="text-purple-300 text-base font-medium">الدخول والخروج الذكي - 31 فيديو توضيحي</p>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2">نظام البيومتري</h2>
+              <p className="text-purple-300 text-xs sm:text-sm md:text-base font-medium">الدخول والخروج الذكي - 31 فيديو</p>
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur rounded-3xl p-8 border border-purple-500/30 mb-12">
-            <h3 className="text-xl font-bold text-purple-200 mb-4">الوصف</h3>
-            <div className="space-y-3 text-gray-300 text-sm">
+          <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur rounded-2xl md:rounded-3xl p-4 md:p-8 border border-purple-500/30 mb-8 md:mb-12">
+            <h3 className="text-lg md:text-xl font-bold text-purple-200 mb-3 md:mb-4">الوصف</h3>
+            <div className="space-y-2 md:space-y-3 text-gray-300 text-xs md:text-sm">
               <p>تطبيق شامل لإدارة الدخول والخروج باستخدام البصمات والهويات.</p>
               <ul className="space-y-2 ml-4 mb-6">
                 <li className="flex items-start gap-3">
@@ -646,30 +646,30 @@ export default function AccessControlProject() {
       </section>
 
       {/* Dashboard Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 py-32 border-t border-white/10">
+      <section className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 py-12 md:py-32 border-t border-white/10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-16"
+          className="mb-8 md:mb-16"
         >
-          <div className="flex items-center gap-6 mb-8">
+          <div className="flex items-center gap-3 md:gap-6 mb-6 md:mb-8">
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 3, repeat: Infinity, delay: 0.6 }}
-              className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-green-500/30 to-emerald-500/20 border border-green-500/50 text-2xl"
+              className="flex items-center justify-center w-10 md:w-14 h-10 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br from-green-500/30 to-emerald-500/20 border border-green-500/50 text-xl md:text-2xl flex-shrink-0"
             >
               📊
             </motion.div>
             <div>
-              <h2 className="text-5xl md:text-6xl font-black text-white mb-2">لوحة التحكم</h2>
-              <p className="text-green-300 text-base font-medium">التتبع والتقارير الشاملة</p>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2">لوحة التحكم</h2>
+              <p className="text-green-300 text-xs sm:text-sm md:text-base font-medium">التتبع والتقارير الشاملة</p>
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur rounded-3xl p-8 border border-green-500/30 mb-8">
-            <h3 className="text-xl font-bold text-green-200 mb-4">الوصف</h3>
-            <div className="space-y-3 text-gray-300 text-sm">
+          <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur rounded-2xl md:rounded-3xl p-4 md:p-8 border border-green-500/30 mb-6 md:mb-8">
+            <h3 className="text-lg md:text-xl font-bold text-green-200 mb-3 md:mb-4">الوصف</h3>
+            <div className="space-y-2 md:space-y-3 text-gray-300 text-xs md:text-sm">
               <p>تطبيق متقدم لتتبع الزوار والقوة الأساسية بلوحات تحكم وتقارير شاملة.</p>
               <ul className="space-y-2 ml-4">
                 <li className="flex items-start gap-3">
