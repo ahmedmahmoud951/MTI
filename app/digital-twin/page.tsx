@@ -13,7 +13,7 @@ export default function DigitalTwin() {
       icon: '🔐',
       color: 'from-red-500 to-orange-600',
       accentColor: 'red',
-      videos: 23,
+      videos: 33,
       image: '🤖',
     },
   ]
