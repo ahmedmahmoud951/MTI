@@ -1,16 +1,30 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 
 export default function AccessControlProject() {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const videos = Array.from({ length: 23 }, (_, i) => ({
     id: i + 1,
     videoUrl: `/Tab/Tab${i + 1}.mp4`,
   }))
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleEnded = () => {
+      const nextIndex = (currentVideoIndex + 1) % videos.length
+      setCurrentVideoIndex(nextIndex)
+    }
+
+    video.addEventListener('ended', handleEnded)
+    return () => video.removeEventListener('ended', handleEnded)
+  }, [currentVideoIndex, videos.length])
 
   const floatingItems = [
     { delay: 0, x: -100, y: -100, emoji: '🔐', size: 'text-4xl' },
@@ -193,12 +207,13 @@ export default function AccessControlProject() {
             >
               <video
                 ref={videoRef}
+                key={`video-${currentVideoIndex}`}
                 className="w-full h-auto aspect-video"
                 controls
                 autoPlay
                 muted
               >
-                <source src={videos[0]?.videoUrl} type="video/mp4" />
+                <source src={videos[currentVideoIndex]?.videoUrl} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
               
