@@ -27,11 +27,11 @@ export default function AccessControlProject() {
   }, [currentVideoIndex, videos.length])
 
   const floatingItems = [
-    { delay: 0, x: -100, y: -100, emoji: '🔐', size: 'text-4xl' },
-    { delay: 0.2, x: 100, y: -80, emoji: '👤', size: 'text-3xl' },
-    { delay: 0.4, x: -80, y: 100, emoji: '🔍', size: 'text-3xl' },
-    { delay: 0.6, x: 120, y: 80, emoji: '✅', size: 'text-4xl' },
-    { delay: 0.8, x: -120, y: 0, emoji: '🛡️', size: 'text-3xl' },
+    { delay: 0, x: -150, y: -150, emoji: '🔐', size: 'text-5xl' },
+    { delay: 0.3, x: 150, y: -120, emoji: '👤', size: 'text-4xl' },
+    { delay: 0.6, x: -120, y: 150, emoji: '🔍', size: 'text-4xl' },
+    { delay: 0.9, x: 180, y: 100, emoji: '✅', size: 'text-5xl' },
+    { delay: 1.2, x: -180, y: 50, emoji: '🛡️', size: 'text-4xl' },
   ]
 
   return (
@@ -90,15 +90,15 @@ export default function AccessControlProject() {
       </div>
 
       {/* Header with Back Button */}
-      <section className="relative z-10 pt-20 pb-16 px-4">
+      <section className="relative z-10 pt-16 pb-24 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8"
+            className="mb-12"
           >
-            <Link href="/digital-twin" className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 hover:gap-3 transition-all duration-300 font-semibold text-lg">
+            <Link href="/digital-twin" className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 hover:gap-3 transition-all duration-300 font-semibold">
               <motion.span
                 animate={{ x: [-5, 5, -5] }}
                 transition={{ duration: 2, repeat: Infinity }}
@@ -109,58 +109,86 @@ export default function AccessControlProject() {
             </Link>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+            {/* Left Content */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:col-span-2"
             >
-              <motion.div
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="mb-6"
-              >
-                <span className="inline-block text-6xl md:text-7xl bg-gradient-to-br from-red-400 via-orange-400 to-yellow-400 rounded-2xl p-4">🤖</span>
-              </motion.div>
-              <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">
-                منظومة التحكم في
-                <br />
-                <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
-                  دخول الأشخاص
-                </span>
-              </h1>
+              <div className="flex items-start gap-6 mb-8">
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="text-6xl md:text-7xl flex-shrink-0"
+                >
+                  🤖
+                </motion.div>
+                <div>
+                  <h1 className="text-5xl md:text-7xl font-black text-white mb-2 leading-tight">
+                    منظومة التحكم في
+                    <br />
+                    <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                      دخول الأشخاص
+                    </span>
+                  </h1>
+                </div>
+              </div>
+
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex items-center gap-3 mt-6"
+                className="space-y-2 mb-12"
               >
-                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-red-400 to-orange-400 animate-pulse" />
-                <p className="text-xl text-gray-300 font-semibold">AI-Powered Access Control System</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-red-400 to-orange-400 animate-pulse" />
+                  <p className="text-lg text-gray-300">نظام ذكي متكامل للتحكم والمراقبة</p>
+                </div>
+                <p className="text-orange-400 font-semibold text-lg ml-6">AI-Powered Access Control System</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="prose prose-invert max-w-none mb-8"
+              >
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  تقنية متقدمة تجمع بين الذكاء الاصطناعي والأمان السيبراني لتوفير حل شامل لإدارة النفاذ. النظام يعمل على مدار الساعة مع دقة عالية وموثوقية مضمونة.
+                </p>
               </motion.div>
             </motion.div>
 
+            {/* Right Stats */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="hidden md:flex flex-col gap-4"
+              className="space-y-4"
             >
               {[
-                { icon: '🔍', text: 'تعرف ذكي على الوجوه' },
-                { icon: '✅', text: 'موافقة فورية' },
-                { icon: '📊', text: 'تحليل بيانات' },
-                { icon: '🛡️', text: 'أمان عالي' },
-              ].map((item, idx) => (
+                { label: 'دقة التعرف', value: '99.8%', icon: '🎯' },
+                { label: 'نقاط الدخول', value: '500+', icon: '🚪' },
+                { label: 'توفر النظام', value: '99.95%', icon: '⚡' },
+                { label: 'المستخدمين اليوميين', value: '10,000+', icon: '👥' },
+              ].map((stat, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 + idx * 0.1 }}
-                  className="flex items-center gap-4 p-4 bg-gradient-to-r from-red-500/10 to-orange-500/10 backdrop-blur-sm rounded-xl border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300"
+                  transition={{ delay: 0.4 + idx * 0.08 }}
+                  className="relative group"
                 >
-                  <span className="text-3xl">{item.icon}</span>
-                  <span className="text-gray-200 font-semibold">{item.text}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="relative p-5 bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-lg rounded-2xl border border-white/10 group-hover:border-orange-500/40 transition-all duration-300">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-2xl">{stat.icon}</span>
+                      <span className="text-3xl font-black text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text">{stat.value}</span>
+                    </div>
+                    <p className="text-sm text-gray-400">{stat.label}</p>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -169,88 +197,93 @@ export default function AccessControlProject() {
       </section>
 
       {/* Video Player Section */}
-      <section className="relative z-10 max-w-6xl mx-auto px-4 py-20">
+      <section className="relative z-10 max-w-6xl mx-auto px-4 py-24">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Video Title */}
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="mb-8"
+            className="mb-16"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-1 h-8 bg-gradient-to-b from-red-500 to-orange-500 rounded-full" />
-              <h2 className="text-3xl font-black text-white">عرض توضيحي</h2>
+            <div className="flex items-center gap-4">
+              <div className="w-1.5 h-12 bg-gradient-to-b from-red-500 to-orange-500 rounded-full" />
+              <div>
+                <h2 className="text-4xl md:text-5xl font-black text-white">عرض توضيحي</h2>
+                <p className="text-gray-400 text-lg mt-2">اكتشف كيفية عمل النظام في بيئة واقعية</p>
+              </div>
             </div>
-            <p className="text-gray-400 text-lg">مشاهدة النظام في العمل مع عروض توضيحية واقعية</p>
           </motion.div>
 
-          {/* Main Video Container */}
+          {/* Video Container with Premium Design */}
           <div className="relative group">
+            {/* Glowing background */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-red-500/60 via-orange-500/40 to-yellow-500/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-700"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -inset-4 bg-gradient-to-br from-red-500/40 via-orange-500/30 to-yellow-500/10 rounded-4xl blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-700"
+              animate={{ scale: [1, 1.08, 1] }}
+              transition={{ duration: 5, repeat: Infinity }}
             />
+            
+            {/* Main video card */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative bg-black rounded-3xl overflow-hidden border-2 border-orange-500/30 group-hover:border-orange-500/60 shadow-2xl transition-all duration-500"
+              className="relative bg-gradient-to-b from-black via-slate-900 to-black rounded-4xl overflow-hidden border border-orange-500/20 group-hover:border-orange-500/50 shadow-2xl transition-all duration-500"
             >
-              <video
-                ref={videoRef}
-                key={`video-${currentVideoIndex}`}
-                className="w-full h-auto aspect-video"
-                controls
-                autoPlay
-                muted
-              >
-                <source src={videos[currentVideoIndex]?.videoUrl} type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-              
-              {/* Corner decorations with animation */}
-              {[
-                'top-4 left-4 border-t-2 border-l-2',
-                'top-4 right-4 border-t-2 border-r-2',
-                'bottom-4 left-4 border-b-2 border-l-2',
-                'bottom-4 right-4 border-b-2 border-r-2',
-              ].map((pos, idx) => (
-                <motion.div
-                  key={idx}
-                  animate={{ opacity: [0.3, 1, 0.3] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: idx * 0.3 }}
-                  className={`absolute w-6 h-6 ${pos} border-orange-500/70 group-hover:border-orange-400`}
-                />
-              ))}
+              {/* Video wrapper */}
+              <div className="relative aspect-video bg-black">
+                <video
+                  ref={videoRef}
+                  key={`video-${currentVideoIndex}`}
+                  className="w-full h-full object-cover"
+                  controls
+                  autoPlay
+                  muted
+                >
+                  <source src={videos[currentVideoIndex]?.videoUrl} type="video/mp4" />
+                </video>
+                
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+              </div>
 
-              {/* Play indicator */}
+              {/* Video info bar */}
+              <div className="px-6 py-4 bg-gradient-to-r from-slate-900/80 to-slate-800/80 backdrop-blur-md border-t border-white/10 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500" />
+                    </span>
+                    <span className="text-sm font-semibold text-gray-300">الفيديو {currentVideoIndex + 1} من 23</span>
+                  </div>
+                </div>
+                <div className="text-sm text-gray-400 font-medium">
+                  {Math.round(((currentVideoIndex + 1) / 23) * 100)}% مكتمل
+                </div>
+              </div>
+
+              {/* Progress indicator */}
               <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute top-8 right-8 flex items-center gap-2 bg-red-500/80 backdrop-blur-sm px-4 py-2 rounded-full"
-              >
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500" />
-                </span>
-                <span className="text-white text-sm font-bold">مباشر</span>
-              </motion.div>
+                animate={{ width: `${((currentVideoIndex + 1) / 23) * 100}%` }}
+                transition={{ duration: 0.6 }}
+                className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500"
+              />
             </motion.div>
           </div>
         </motion.div>
       </section>
 
       {/* Project Details Section */}
-      <section className="relative z-10 max-w-6xl mx-auto px-4 py-24 border-t border-white/10">
+      <section className="relative z-10 max-w-7xl mx-auto px-4 py-24 border-t border-white/10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -258,14 +291,16 @@ export default function AccessControlProject() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-1 w-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-full" />
-            <h2 className="text-4xl md:text-5xl font-black text-white">مميزات النظام</h2>
-            <div className="h-1 w-12 bg-gradient-to-l from-red-500 to-orange-500 rounded-full" />
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="h-1.5 w-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-full" />
+              <h2 className="text-4xl md:text-5xl font-black text-white">مميزات النظام</h2>
+              <div className="h-1.5 w-16 bg-gradient-to-l from-red-500 to-orange-500 rounded-full" />
+            </div>
+            <p className="text-center text-gray-400 text-lg max-w-3xl mx-auto">
+              تقنيات متقدمة وحلول ذكية مصممة لتوفير أفضل أداء وأمان في إدارة النفاذ والمراقبة
+            </p>
           </div>
-          <p className="text-center text-gray-400 text-lg max-w-2xl mx-auto">
-            اكتشف قدرات النظام المتقدمة والحلول الذكية المتكاملة
-          </p>
         </motion.div>
 
         <motion.div
@@ -292,21 +327,22 @@ export default function AccessControlProject() {
               whileHover={{ scale: 1.08, y: -10 }}
               className="group relative"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} to-orange-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-all duration-500`} />
-              <div className="relative bg-gradient-to-br from-slate-800/70 to-slate-900/70 backdrop-blur-xl rounded-3xl p-8 border border-white/10 group-hover:border-orange-500/50 transition-all duration-300 h-full">
+              <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} to-orange-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-70 transition-all duration-700`} />
+              <div className="relative bg-gradient-to-br from-slate-800/80 via-slate-800/60 to-slate-900/80 backdrop-blur-2xl rounded-3xl p-8 border border-white/10 group-hover:border-orange-500/60 transition-all duration-300 h-full shadow-lg group-hover:shadow-2xl">
+                <div className="absolute top-0 right-0 w-20 h-20 bg-orange-500/5 rounded-full blur-2xl" />
                 <motion.div
-                  animate={{ scale: [1, 1.1, 1], rotate: [0, 5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: idx * 0.2 }}
-                  className="text-6xl mb-6 inline-block"
+                  animate={{ scale: [1, 1.15, 1], rotate: [0, 8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, delay: idx * 0.2 }}
+                  className="text-7xl mb-6 inline-block"
                 >
                   {feature.icon}
                 </motion.div>
-                <h3 className="text-2xl font-black text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{feature.desc}</p>
+                <h3 className="text-2xl font-black text-white mb-3 leading-tight">{feature.title}</h3>
+                <p className="text-gray-300 leading-relaxed mb-6 flex-grow">{feature.desc}</p>
                 <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="mt-4 flex items-center gap-2 text-orange-400 font-semibold"
+                  animate={{ x: [0, 8, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity }}
+                  className="flex items-center gap-2 text-orange-400 font-semibold text-sm"
                 >
                   <span>←</span>
                   <span>اكتشف المزيد</span>
