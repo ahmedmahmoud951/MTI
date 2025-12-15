@@ -464,7 +464,7 @@ export default function AccessControlProject() {
             </div>
             
             <div className="relative aspect-video bg-black overflow-hidden">
-              <video className="w-full h-full object-cover" autoPlay muted>
+              <video className="w-full h-full object-cover" autoPlay muted controls>
                 <source src="/Tab/Video2.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
@@ -746,7 +746,7 @@ export default function AccessControlProject() {
             </div>
             
             <div className="relative aspect-video bg-black overflow-hidden">
-              <video className="w-full h-full object-cover" autoPlay muted>
+              <video className="w-full h-full object-cover" autoPlay muted controls>
                 <source src="/Tab/Video1.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
