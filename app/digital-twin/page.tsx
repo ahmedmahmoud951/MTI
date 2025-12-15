@@ -1,64 +1,75 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import Link from 'next/link'
 
 export default function DigitalTwin() {
-  const [activeTab, setActiveTab] = useState('overview')
-
-  const features = [
+  const projects = [
     {
-      icon: '🔄',
-      title: 'Real-time Synchronization',
-      description: 'Continuous sync between physical and digital worlds',
-    },
-    {
-      icon: '📊',
-      title: 'Advanced Analytics',
-      description: 'Predict failures and optimize operations',
-    },
-    {
-      icon: '🤖',
-      title: 'AI-Powered Insights',
-      description: 'Machine learning for intelligent decision making',
-    },
-    {
-      icon: '🎮',
-      title: '3D Visualization',
-      description: 'Interactive 3D models of physical assets',
-    },
-    {
-      icon: '⚡',
-      title: 'Performance Optimization',
-      description: 'Simulate scenarios to maximize efficiency',
-    },
-    {
+      id: 'access-control',
+      title: 'منظومة التحكم في دخول الأشخاص عن طريق الذكاء الصناعي',
+      titleEn: 'AI-Powered Access Control System',
+      description: 'نظام متكامل للتحكم والمراقبة الذكية مع تقنيات التعرف على الوجوه',
       icon: '🔐',
-      title: 'Secure Integration',
-      description: 'Enterprise-grade security and compliance',
-    },
-  ]
-
-  const useCases = [
-    {
-      title: 'Manufacturing',
-      description: 'Optimize production lines and reduce downtime',
-      stats: '40% efficiency gain',
+      color: 'from-red-500 to-orange-600',
+      accentColor: 'red',
+      videos: 23,
+      image: '🤖',
     },
     {
-      title: 'Energy Distribution',
-      description: 'Smart grid management and power optimization',
-      stats: '25% energy savings',
+      id: 'smart-surveillance',
+      title: 'نظام المراقبة الذكية',
+      titleEn: 'Smart Surveillance System',
+      description: 'تقنيات مراقبة متقدمة مع تحليل فيديو AI',
+      icon: '📹',
+      color: 'from-blue-500 to-cyan-600',
+      accentColor: 'blue',
+      videos: 0,
+      image: '📹',
     },
     {
-      title: 'Smart Cities',
-      description: 'Urban infrastructure monitoring and management',
-      stats: '50+ cities globally',
+      id: 'resource-management',
+      title: 'إدارة الموارد الذكية',
+      titleEn: 'Smart Resource Management',
+      description: 'إدارة فعالة للموارد مع تحليلات فورية',
+      icon: '📊',
+      color: 'from-purple-500 to-pink-600',
+      accentColor: 'purple',
+      videos: 0,
+      image: '📊',
     },
     {
-      title: 'Healthcare',
-      description: 'Hospital operations and equipment management',
-      stats: '30% cost reduction',
+      id: 'data-analytics',
+      title: 'تحليل البيانات المتقدم',
+      titleEn: 'Advanced Data Analytics',
+      description: 'رؤى عميقة ودقيقة لعملياتك التجارية',
+      icon: '📈',
+      color: 'from-green-500 to-emerald-600',
+      accentColor: 'green',
+      videos: 0,
+      image: '📈',
+    },
+    {
+      id: 'cybersecurity',
+      title: 'الأمن السيبراني المتقدم',
+      titleEn: 'Advanced Cybersecurity',
+      description: 'حماية كاملة لأنظمتك من التهديدات السيبرانية',
+      icon: '🔒',
+      color: 'from-yellow-500 to-orange-600',
+      accentColor: 'yellow',
+      videos: 0,
+      image: '🔒',
+    },
+    {
+      id: 'alerts',
+      title: 'نظام التنبيهات الفورية',
+      titleEn: 'Real-time Alerts System',
+      description: 'تنبيهات فورية وذكية للأحداث الحرجة',
+      icon: '🔔',
+      color: 'from-rose-500 to-red-600',
+      accentColor: 'rose',
+      videos: 0,
+      image: '🔔',
     },
   ]
 
@@ -67,194 +78,58 @@ export default function DigitalTwin() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8 },
+      transition: { duration: 0.6 },
     },
   }
 
   return (
-    <div className="w-full pt-24 pb-20">
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-80 h-80 bg-yellow-500/20 rounded-full mix-blend-screen filter blur-3xl animate-float" />
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-yellow-600/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse-slow" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-yellow-500/10 rounded-full mix-blend-screen filter blur-3xl" />
-        </div>
+    <div className="w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-950 min-h-screen">
+      {/* Animated Background */}
+      <div className="fixed inset-0 z-0 overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-red-500/10 rounded-full mix-blend-screen filter blur-3xl animate-blob opacity-20" />
+        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full mix-blend-screen filter blur-3xl animate-blob-delay opacity-20" />
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-purple-500/10 rounded-full mix-blend-screen filter blur-3xl animate-pulse opacity-10" />
+      </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-6xl md:text-7xl font-bold cyber-text mb-6"
-          >
-            Digital Twin Technology
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
-          >
-            Bridge the gap between the physical and digital world with our revolutionary Digital Twin solutions
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-500/50 transition-all duration-300 hover:scale-105 cursor-pointer"
-          >
-            Explore Now
-          </motion.div>
-        </div>
-      </section>
-
-      {/* What is Digital Twin */}
-      <section className="max-w-6xl mx-auto px-4 py-20">
+      {/* Header Section */}
+      <section className="relative z-10 pt-32 pb-16 px-4 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         >
-          {/* Text Content */}
-          <div>
-            <h2 className="text-4xl font-bold cyber-text mb-6">
-              What is a Digital Twin?
-            </h2>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              A Digital Twin is a virtual replica of a physical object, system, or process that exists in cyberspace. It runs in real-time, synchronized with IoT sensors and data from the physical world.
-            </p>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              By combining real-world sensor data with advanced analytics and AI, Digital Twins enable organizations to:
-            </p>
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex items-center gap-3">
-                <span className="text-yellow-400 font-bold">✓</span>
-                Monitor operations in real-time
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-yellow-400 font-bold">✓</span>
-                Predict maintenance needs before failures
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-yellow-400 font-bold">✓</span>
-                Simulate scenarios for optimization
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-yellow-400 font-bold">✓</span>
-                Reduce costs and improve efficiency
-              </li>
-            </ul>
-          </div>
-
-          {/* 3D Visualization Placeholder */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="glow-box rounded-lg p-8 backdrop-blur-sm h-96 flex items-center justify-center"
-          >
-            <div className="text-center">
-              <div className="text-6xl mb-4">🌐</div>
-              <p className="text-yellow-400 font-semibold">3D Digital Twin Visualization</p>
-              <p className="text-gray-400 text-sm mt-2">Interactive 3D model with real-time data</p>
-            </div>
-          </motion.div>
+          <h1 className="text-5xl md:text-7xl font-black mb-4">
+            <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+              حلول رقمية
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2">Digital Twin Solutions</p>
+          <div className="h-1 w-16 bg-gradient-to-r from-red-500 to-orange-500 mx-auto rounded-full mt-6" />
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-gray-300 text-lg mt-8 max-w-2xl mx-auto"
+        >
+          منصة متكاملة للحلول الذكية والعمليات الرقمية المتقدمة
+        </motion.p>
       </section>
 
-      {/* Video Section */}
-      <section className="max-w-6xl mx-auto px-4 py-20 border-t border-yellow-500/20">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold cyber-text text-center mb-12"
-        >
-          Digital Twin in Action
-        </motion.h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Video 1 - Digital Twin 5D Demo */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="glow-box rounded-lg overflow-hidden backdrop-blur-sm"
-          >
-            <video
-              className="w-full h-auto aspect-video bg-black"
-              controls
-              autoPlay
-              muted
-              loop
-            >
-              <source src="/digital-twin-demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-yellow-400 mb-2">🎬 Digital Twin 5D Technology Demo</h3>
-              <p className="text-gray-400 text-sm">
-                Experience the cutting-edge Digital Twin technology in action. Watch our 5D visualization system showcase real-time asset monitoring and predictive analytics.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Video 2 - Transform Learning */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="glow-box rounded-lg overflow-hidden backdrop-blur-sm"
-          >
-            <video
-              className="w-full h-auto aspect-video bg-black"
-              controls
-              autoPlay
-              muted
-              loop
-            >
-              <source src="/digital-twin-demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-yellow-400 mb-2">🎬 Transform Learning Experience</h3>
-              <p className="text-gray-400 text-sm">
-                Discover how our Digital Twin technology transforms learning and training processes. See interactive simulations that enhance understanding and skill development.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="max-w-7xl mx-auto px-4 py-20 border-t border-yellow-500/20">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold cyber-text text-center mb-12"
-        >
-          Key Features
-        </motion.h2>
-
+      {/* Projects Grid */}
+      <section className="relative z-10 max-w-7xl mx-auto px-4 py-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -262,110 +137,102 @@ export default function DigitalTwin() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {features.map((feature, index) => (
+          {projects.map((project, idx) => (
             <motion.div
-              key={index}
+              key={project.id}
               variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -10 }}
-              className="glow-box p-8 rounded-lg backdrop-blur-sm hover:bg-yellow-500/5 transition-colors"
+              className="group"
             >
-              <div className="text-5xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold text-yellow-400 mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-gray-400 leading-relaxed">
-                {feature.description}
-              </p>
+              <Link href={`/digital-twin/${project.id}`}>
+                <div className="relative h-full cursor-pointer">
+                  {/* Glowing background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.color} rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-500`} />
+
+                  {/* Card */}
+                  <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-3xl p-8 border border-white/10 group-hover:border-white/30 transition-all duration-300 h-full flex flex-col overflow-hidden">
+                    {/* Number badge */}
+                    <div className="absolute top-6 right-6 text-6xl font-black text-white/5 group-hover:text-white/10 transition-colors">
+                      {String(idx + 1).padStart(2, '0')}
+                    </div>
+
+                    {/* Icon */}
+                    <div className="text-6xl mb-6 group-group-hover:scale-110 transition-transform duration-300">
+                      {project.image}
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-yellow-400 group-hover:bg-clip-text transition-all duration-300">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-sm text-orange-300 font-semibold mb-4">
+                      {project.titleEn}
+                    </p>
+
+                    <p className="text-gray-400 text-sm flex-grow leading-relaxed mb-6">
+                      {project.description}
+                    </p>
+
+                    {/* Divider */}
+                    <div className="h-0.5 w-12 bg-gradient-to-r from-white/50 to-transparent rounded-full mb-4" />
+
+                    {/* Footer */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-500 font-semibold uppercase tracking-wider">
+                        اكتشف المزيد
+                      </span>
+                      <motion.div
+                        whileHover={{ x: 5 }}
+                        className="text-orange-400 text-xl"
+                      >
+                        →
+                      </motion.div>
+                    </div>
+
+                    {/* Video count badge */}
+                    {project.videos > 0 && (
+                      <div className="absolute bottom-6 left-6 bg-gradient-to-r from-red-500/30 to-orange-500/30 backdrop-blur-md border border-red-400/50 rounded-lg px-3 py-1 text-sm font-semibold text-red-300">
+                        {project.videos} فيديو
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
       </section>
 
-      {/* Use Cases */}
-      <section className="max-w-7xl mx-auto px-4 py-20 border-t border-yellow-500/20">
-        <motion.h2
+      {/* CTA Section */}
+      <section className="relative z-10 max-w-5xl mx-auto px-4 py-24">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold cyber-text text-center mb-12"
+          className="relative group"
         >
-          Industry Applications
-        </motion.h2>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-        >
-          {useCases.map((useCase, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -10 }}
-              className="glow-box p-8 rounded-lg backdrop-blur-sm hover:bg-yellow-500/5 transition-colors"
+          <div className="absolute inset-0 bg-gradient-to-r from-red-600/40 via-orange-600/40 to-yellow-600/40 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+          <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 backdrop-blur-xl rounded-3xl p-12 md:p-16 border border-white/10 group-hover:border-orange-500/40 transition-all duration-300 text-center">
+            <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent mb-6">
+              جاهز لتحويل عملك؟
+            </h2>
+            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+              تواصل معنا اليوم واكتشف كيف يمكن حلولنا الرقمية تحسين كفاءة عمليتك
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(239, 68, 68, 0.5)' }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 text-white font-bold text-lg rounded-xl hover:shadow-2xl transition-all duration-300"
             >
-              <h3 className="text-2xl font-bold text-yellow-400 mb-4">
-                {useCase.title}
-              </h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                {useCase.description}
-              </p>
-              <div className="text-lg font-bold text-yellow-400 border-t border-yellow-500/20 pt-4">
-                📈 {useCase.stats}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* Technology Stack */}
-      <section className="max-w-4xl mx-auto px-4 py-20 border-t border-yellow-500/20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="glow-box p-12 rounded-lg backdrop-blur-sm text-center"
-        >
-          <h2 className="text-3xl font-bold cyber-text mb-8">
-            Technology Stack
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {['IoT Sensors', 'Cloud Computing', 'AI/ML', '3D Visualization', 'Real-time Analytics', 'Big Data', 'Edge Computing', 'Cybersecurity'].map((tech, index) => (
-              <div
-                key={index}
-                className="p-4 bg-yellow-500/10 rounded-lg border border-yellow-500/30 text-yellow-400 font-semibold"
-              >
-                {tech}
-              </div>
-            ))}
+              احصل على استشارة مجانية
+            </motion.button>
           </div>
         </motion.div>
       </section>
 
-      {/* CTA */}
-      <section className="max-w-4xl mx-auto px-4 mt-20 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="glow-box p-12 rounded-lg backdrop-blur-sm"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold cyber-text mb-6">
-            Ready to Implement Digital Twin?
-          </h2>
-          <p className="text-lg text-gray-300 mb-8">
-            Let us help you transform your operations with cutting-edge Digital Twin technology
-          </p>
-          <button className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-500/50 transition-all duration-300 hover:scale-105">
-            Get Started
-          </button>
-        </motion.div>
-      </section>
+      {/* Footer spacer */}
+      <div className="h-20" />
     </div>
   )
 }
