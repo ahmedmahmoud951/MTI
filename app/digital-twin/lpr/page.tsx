@@ -68,10 +68,23 @@ export default function LPR() {
       const nextVideo = videos[nextIndex]
       if (nextVideo) {
         nextVideoRef.current.src = nextVideo
+        nextVideoRef.current.preload = 'auto'
         nextVideoRef.current.load()
       }
     }
   }, [currentVideoIndex, videos])
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    
+    const handleLoadStart = () => {
+      setVideoReady(false)
+    }
+
+    video.addEventListener('loadstart', handleLoadStart)
+    return () => video.removeEventListener('loadstart', handleLoadStart)
+  }, [])
 
   return (
     <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
@@ -159,15 +172,17 @@ export default function LPR() {
                 <video
                   ref={videoRef}
                   src={videos[currentVideoIndex]}
+                  key={currentVideoIndex}
                   autoPlay
                   muted
                   playsInline
+                  preload="auto"
                   className="w-full h-auto"
-                  onCanPlayThrough={() => {
+                  onLoadedData={() => {
                     setVideoReady(true)
-                    if (videoRef.current) {
-                      videoRef.current.play().catch(() => {})
-                    }
+                  }}
+                  onPlay={() => {
+                    setVideoReady(true)
                   }}
                 />
                 <video
