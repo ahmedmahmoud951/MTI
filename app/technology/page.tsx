@@ -98,7 +98,7 @@ export default function Technology() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
           >
             <motion.div
               variants={itemVariants}
@@ -411,6 +411,312 @@ export default function Technology() {
                             animate={mounted && animConfig.enabled ? { scale: [1, 1.2, 1] } : {}}
                             transition={{ duration: animConfig.pulseDuration, repeat: animConfig.enabled ? Infinity : 0, delay: i * 0.15 }}
                             className="w-2 h-2 rounded-full bg-gradient-to-r from-red-400 to-orange-400"
+                          />
+                        ))}
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="w-full"
+            >
+              <Link href="/digital-twin/lpr">
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -8 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="group relative h-full"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-600 rounded-3xl opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-xl" />
+
+                  <motion.div
+                    animate={mounted && animConfig.enabled ? { 
+                      boxShadow: [
+                        '0 0 20px rgba(16, 185, 129, 0.3)',
+                        '0 0 40px rgba(16, 185, 129, 0.5)',
+                        '0 0 20px rgba(16, 185, 129, 0.3)'
+                      ]
+                    } : {}}
+                    transition={{ duration: animConfig.boxShadowDuration, repeat: animConfig.enabled ? Infinity : 0 }}
+                    className="relative p-6 sm:p-8 md:p-10 rounded-3xl bg-gradient-to-br from-slate-900/80 to-slate-800/80 border border-green-500/30 hover:border-green-400/80 backdrop-blur-xl overflow-hidden cursor-pointer shadow-2xl h-full flex flex-col"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-green-500/10 rounded-full blur-3xl group-hover:bg-green-500/20 transition-all duration-500" />
+                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-500" />
+
+                    <div className="relative z-10 space-y-6 flex flex-col h-full">
+                      <motion.div
+                        animate={mounted && animConfig.enabled ? { 
+                          y: [0, -10, 0],
+                          rotate: [0, 5, -5, 0]
+                        } : {}}
+                        transition={{ duration: animConfig.rotateDuration, repeat: animConfig.enabled ? Infinity : 0, ease: "easeInOut" }}
+                        className="flex justify-center"
+                      >
+                        <motion.div
+                          animate={mounted && animConfig.enabled ? { scale: [1, 1.15, 1] } : {}}
+                          transition={{ duration: animConfig.pulseDuration + 0.5, repeat: animConfig.enabled ? Infinity : 0 }}
+                          className="text-5xl sm:text-6xl md:text-7xl inline-block"
+                        >
+                          🚗
+                        </motion.div>
+                      </motion.div>
+
+                      <div className="space-y-2 md:space-y-4 text-center">
+                        <motion.h2 
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2 }}
+                          viewport={{ once: true }}
+                          className="text-2xl sm:text-3xl md:text-4xl font-black cyber-text"
+                        >
+                          LPR System
+                        </motion.h2>
+                        <motion.p 
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.3 }}
+                          viewport={{ once: true }}
+                          className="text-sm sm:text-base md:text-lg bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent font-bold"
+                        >
+                          License Plate Recognition
+                        </motion.p>
+                      </div>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="space-y-4 flex-grow flex flex-col justify-between"
+                      >
+                        <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed">
+                          Advanced vehicle identification with real-time license plate recognition and high-accuracy detection.
+                        </p>
+
+                        <motion.div
+                          className="w-full flex justify-center"
+                        >
+                          <motion.div
+                            whileHover={{ scale: 1.15 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
+                            className="relative group/btn"
+                          >
+                            <motion.div
+                              animate={mounted && animConfig.enabled ? { 
+                                boxShadow: [
+                                  '0 0 15px rgba(16, 185, 129, 0.4), inset 0 0 15px rgba(16, 185, 129, 0.2)',
+                                  '0 0 35px rgba(16, 185, 129, 0.8), inset 0 0 20px rgba(16, 185, 129, 0.4)',
+                                  '0 0 15px rgba(16, 185, 129, 0.4), inset 0 0 15px rgba(16, 185, 129, 0.2)'
+                                ]
+                              } : {}}
+                              transition={{ duration: animConfig.boxShadowDuration, repeat: animConfig.enabled ? Infinity : 0 }}
+                              className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-green-500 via-emerald-500 to-teal-500 flex items-center justify-center text-2xl sm:text-3xl font-black shadow-2xl overflow-hidden"
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 -skew-x-12" />
+                              
+                              <motion.div
+                                animate={mounted && animConfig.enabled ? { rotate: 360 } : {}}
+                                transition={{ duration: animConfig.rotateDuration, repeat: animConfig.enabled ? Infinity : 0, ease: "linear" }}
+                                className="absolute inset-0 rounded-full border-2 border-transparent border-t-emerald-300 border-r-teal-300"
+                              />
+
+                              <motion.span
+                                animate={mounted && animConfig.enabled ? { 
+                                  y: [0, -3, 0],
+                                  opacity: [1, 0.8, 1]
+                                } : {}}
+                                transition={{ duration: animConfig.pulseDuration - 0.5, repeat: animConfig.enabled ? Infinity : 0 }}
+                                className="relative z-10"
+                              >
+                                ✨
+                              </motion.span>
+                            </motion.div>
+
+                            <motion.div
+                              animate={mounted && animConfig.enabled ? { 
+                                opacity: [0, 1, 0],
+                                scale: [0.5, 1.5, 0.5]
+                              } : {}}
+                              transition={{ duration: animConfig.pulseDuration, repeat: animConfig.enabled ? Infinity : 0, delay: 0.5 }}
+                              className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-teal-400 blur-lg opacity-60"
+                            />
+                          </motion.div>
+                        </motion.div>
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        viewport={{ once: true }}
+                        className="flex justify-center gap-1 pt-2"
+                      >
+                        {[...Array(3)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            animate={mounted && animConfig.enabled ? { scale: [1, 1.2, 1] } : {}}
+                            transition={{ duration: animConfig.pulseDuration, repeat: animConfig.enabled ? Infinity : 0, delay: i * 0.15 }}
+                            className="w-2 h-2 rounded-full bg-gradient-to-r from-green-400 to-emerald-400"
+                          />
+                        ))}
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="w-full"
+            >
+              <Link href="/digital-twin/ticketing-system">
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -8 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="group relative h-full"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 via-orange-500 to-amber-600 rounded-3xl opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-xl" />
+
+                  <motion.div
+                    animate={mounted && animConfig.enabled ? { 
+                      boxShadow: [
+                        '0 0 20px rgba(234, 179, 8, 0.3)',
+                        '0 0 40px rgba(234, 179, 8, 0.5)',
+                        '0 0 20px rgba(234, 179, 8, 0.3)'
+                      ]
+                    } : {}}
+                    transition={{ duration: animConfig.boxShadowDuration, repeat: animConfig.enabled ? Infinity : 0 }}
+                    className="relative p-6 sm:p-8 md:p-10 rounded-3xl bg-gradient-to-br from-slate-900/80 to-slate-800/80 border border-yellow-500/30 hover:border-yellow-400/80 backdrop-blur-xl overflow-hidden cursor-pointer shadow-2xl h-full flex flex-col"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-yellow-500/10 rounded-full blur-3xl group-hover:bg-yellow-500/20 transition-all duration-500" />
+                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl group-hover:bg-orange-500/20 transition-all duration-500" />
+
+                    <div className="relative z-10 space-y-6 flex flex-col h-full">
+                      <motion.div
+                        animate={mounted && animConfig.enabled ? { 
+                          y: [0, -10, 0],
+                          rotate: [0, 5, -5, 0]
+                        } : {}}
+                        transition={{ duration: animConfig.rotateDuration, repeat: animConfig.enabled ? Infinity : 0, ease: "easeInOut" }}
+                        className="flex justify-center"
+                      >
+                        <motion.div
+                          animate={mounted && animConfig.enabled ? { scale: [1, 1.15, 1] } : {}}
+                          transition={{ duration: animConfig.pulseDuration + 0.5, repeat: animConfig.enabled ? Infinity : 0 }}
+                          className="text-5xl sm:text-6xl md:text-7xl inline-block"
+                        >
+                          💳
+                        </motion.div>
+                      </motion.div>
+
+                      <div className="space-y-2 md:space-y-4 text-center">
+                        <motion.h2 
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2 }}
+                          viewport={{ once: true }}
+                          className="text-2xl sm:text-3xl md:text-4xl font-black cyber-text"
+                        >
+                          Ticketing System
+                        </motion.h2>
+                        <motion.p 
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.3 }}
+                          viewport={{ once: true }}
+                          className="text-sm sm:text-base md:text-lg bg-gradient-to-r from-yellow-400 via-orange-400 to-amber-400 bg-clip-text text-transparent font-bold"
+                        >
+                          Toll Collection System
+                        </motion.p>
+                      </div>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="space-y-4 flex-grow flex flex-col justify-between"
+                      >
+                        <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed">
+                          Automated toll collection with intelligent vehicle identification and revenue optimization.
+                        </p>
+
+                        <motion.div
+                          className="w-full flex justify-center"
+                        >
+                          <motion.div
+                            whileHover={{ scale: 1.15 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
+                            className="relative group/btn"
+                          >
+                            <motion.div
+                              animate={mounted && animConfig.enabled ? { 
+                                boxShadow: [
+                                  '0 0 15px rgba(234, 179, 8, 0.4), inset 0 0 15px rgba(234, 179, 8, 0.2)',
+                                  '0 0 35px rgba(234, 179, 8, 0.8), inset 0 0 20px rgba(234, 179, 8, 0.4)',
+                                  '0 0 15px rgba(234, 179, 8, 0.4), inset 0 0 15px rgba(234, 179, 8, 0.2)'
+                                ]
+                              } : {}}
+                              transition={{ duration: animConfig.boxShadowDuration, repeat: animConfig.enabled ? Infinity : 0 }}
+                              className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-yellow-500 via-orange-500 to-amber-500 flex items-center justify-center text-2xl sm:text-3xl font-black shadow-2xl overflow-hidden"
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 -skew-x-12" />
+                              
+                              <motion.div
+                                animate={mounted && animConfig.enabled ? { rotate: 360 } : {}}
+                                transition={{ duration: animConfig.rotateDuration, repeat: animConfig.enabled ? Infinity : 0, ease: "linear" }}
+                                className="absolute inset-0 rounded-full border-2 border-transparent border-t-orange-300 border-r-amber-300"
+                              />
+
+                              <motion.span
+                                animate={mounted && animConfig.enabled ? { 
+                                  y: [0, -3, 0],
+                                  opacity: [1, 0.8, 1]
+                                } : {}}
+                                transition={{ duration: animConfig.pulseDuration - 0.5, repeat: animConfig.enabled ? Infinity : 0 }}
+                                className="relative z-10"
+                              >
+                                ✨
+                              </motion.span>
+                            </motion.div>
+
+                            <motion.div
+                              animate={mounted && animConfig.enabled ? { 
+                                opacity: [0, 1, 0],
+                                scale: [0.5, 1.5, 0.5]
+                              } : {}}
+                              transition={{ duration: animConfig.pulseDuration, repeat: animConfig.enabled ? Infinity : 0, delay: 0.5 }}
+                              className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 blur-lg opacity-60"
+                            />
+                          </motion.div>
+                        </motion.div>
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        viewport={{ once: true }}
+                        className="flex justify-center gap-1 pt-2"
+                      >
+                        {[...Array(3)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            animate={mounted && animConfig.enabled ? { scale: [1, 1.2, 1] } : {}}
+                            transition={{ duration: animConfig.pulseDuration, repeat: animConfig.enabled ? Infinity : 0, delay: i * 0.15 }}
+                            className="w-2 h-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400"
                           />
                         ))}
                       </motion.div>
