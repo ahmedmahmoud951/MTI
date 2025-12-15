@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect, useRef, useMemo } from 'react'
 
@@ -28,6 +27,7 @@ const itemVariants = {
 export default function TicketingSystem() {
   const [mounted, setMounted] = useState(false)
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+  const [videoReady, setVideoReady] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const nextVideoRef = useRef<HTMLVideoElement>(null)
   
@@ -41,6 +41,12 @@ export default function TicketingSystem() {
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  useEffect(() => {
+    if (videoRef.current) {
+      setVideoReady(false)
+    }
+  }, [currentVideoIndex])
 
   useEffect(() => {
     const video = videoRef.current
@@ -143,17 +149,33 @@ export default function TicketingSystem() {
               <motion.div
                 className="relative w-full rounded-3xl bg-black border border-yellow-500/30 overflow-hidden shadow-2xl"
               >
+                {!videoReady && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/80 z-10">
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="w-12 h-12 border-4 border-yellow-500/20 border-t-yellow-500 rounded-full"
+                    />
+                  </div>
+                )}
                 <video
                   ref={videoRef}
                   src={videos[currentVideoIndex]}
                   autoPlay
                   muted
+                  playsInline
                   className="w-full h-auto"
+                  onCanPlayThrough={() => {
+                    setVideoReady(true)
+                    if (videoRef.current) {
+                      videoRef.current.play().catch(() => {})
+                    }
+                  }}
                 />
                 <video
                   ref={nextVideoRef}
                   style={{ display: 'none' }}
-                  preload="auto"
+                  preload="metadata"
                 />
                 
                 <div className="absolute bottom-4 right-4 flex gap-2">
