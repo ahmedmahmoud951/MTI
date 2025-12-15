@@ -252,31 +252,50 @@ export default function AccessControlProject() {
                 </video>
                 
                 {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Premium progress overlay */}
+                <motion.div
+                  animate={{ width: `${((currentVideoIndex + 1) / 23) * 100}%` }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  className="absolute bottom-0 left-0 h-1.5 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 shadow-lg"
+                />
               </div>
 
-              {/* Video info bar */}
-              <div className="px-6 py-4 bg-gradient-to-r from-slate-900/80 to-slate-800/80 backdrop-blur-md border-t border-white/10 flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2">
-                    <span className="relative flex h-2.5 w-2.5">
+              {/* Elegant bottom accent bar */}
+              <div className="h-16 bg-gradient-to-r from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-xl border-t border-white/5 flex items-center px-6">
+                <div className="flex items-center gap-4 w-full">
+                  {/* Left side - Play indicator */}
+                  <motion.div
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="relative flex h-3 w-3">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500" />
-                    </span>
-                    <span className="text-sm font-semibold text-gray-300">الفيديو {currentVideoIndex + 1} من 23</span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500" />
+                    </div>
+                    <span className="text-xs font-bold text-orange-400 uppercase tracking-widest">يتم التشغيل</span>
+                  </motion.div>
+
+                  {/* Right side - Stats */}
+                  <div className="ml-auto flex items-center gap-6 text-xs">
+                    <div className="flex flex-col items-end">
+                      <span className="text-gray-500 text-xs">التقدم</span>
+                      <span className="text-lg font-black text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text">
+                        {Math.round(((currentVideoIndex + 1) / 23) * 100)}%
+                      </span>
+                    </div>
+                    <div className="w-px h-8 bg-white/10" />
+                    <div className="flex flex-col items-end">
+                      <span className="text-gray-500 text-xs">المقطع</span>
+                      <span className="text-lg font-black text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text">
+                        {currentVideoIndex + 1}/23
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <div className="text-sm text-gray-400 font-medium">
-                  {Math.round(((currentVideoIndex + 1) / 23) * 100)}% مكتمل
-                </div>
               </div>
-
-              {/* Progress indicator */}
-              <motion.div
-                animate={{ width: `${((currentVideoIndex + 1) / 23) * 100}%` }}
-                transition={{ duration: 0.6 }}
-                className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500"
-              />
             </motion.div>
           </div>
         </motion.div>
