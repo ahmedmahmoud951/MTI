@@ -12,7 +12,7 @@ export const getAnimationConfig = (isMobile: boolean, prefersReducedMotion: bool
 
   if (isMobile) {
     return {
-      enabled: true,
+      enabled: false,
       boxShadowDuration: 4,
       rotateDuration: 6,
       pulseDuration: 3,
@@ -22,7 +22,7 @@ export const getAnimationConfig = (isMobile: boolean, prefersReducedMotion: bool
   }
 
   return {
-    enabled: true,
+    enabled: false,
     boxShadowDuration: 2,
     rotateDuration: 4,
     pulseDuration: 2,
